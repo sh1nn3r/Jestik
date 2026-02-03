@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Price Scraper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-title">
+        <span class="logo">⌚</span>
+        <h1>Watch Price Scraper</h1>
+      </div>
+      <div class="header-stats">
+        <span id="listingCount">0</span> listings
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="listings">Listings</button>
+      <button class="tab" data-tab="manual">Manual Entry</button>
+      <button class="tab" data-tab="export">Export</button>
+    </nav>
+
+    <!-- Listings Tab -->
+    <div id="listingsTab" class="tab-content active">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search listings...">
+        <select id="filterBrand">
+          <option value="">All Brands</option>
+        </select>
+      </div>
+      <div id="listingsContainer" class="listings-container">
+        <div class="empty-state">
+          <p>No listings yet</p>
+          <p class="hint">Go to a Facebook watch group and click "Extract" on listings</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manual Entry Tab -->
+    <div id="manualTab" class="tab-content">
+      <div class="manual-entry">
+        <textarea id="manualText" placeholder="Paste watch listing text here...&#10;&#10;Example:&#10;Rolex Submariner 126610LN&#10;2023, Black dial, Full set&#10;$12,500 shipped"></textarea>
+        <button id="parseBtn" class="btn btn-primary">Parse Listing</button>
+
+        <div id="parseResult" class="parse-result hidden">
+          <h3>Parsed Data</h3>
+          <div class="parsed-fields">
+            <div class="field-row">
+              <label>Brand</label>
+              <input type="text" id="parsedBrand">
+            </div>
+            <div class="field-row">
+              <label>Model</label>
+              <input type="text" id="parsedModel">
+            </div>
+            <div class="field-row">
+              <label>Reference</label>
+              <input type="text" id="parsedReference">
+            </div>
+            <div class="field-row">
+              <label>Year</label>
+              <input type="text" id="parsedYear">
+            </div>
+            <div class="field-row">
+              <label>Dial Color</label>
+              <input type="text" id="parsedDialColor">
+            </div>
+            <div class="field-row">
+              <label>Material</label>
+              <input type="text" id="parsedMaterial">
+            </div>
+            <div class="field-row">
+              <label>Price</label>
+              <input type="text" id="parsedPrice">
+            </div>
+            <div class="field-row">
+              <label>Condition</label>
+              <input type="text" id="parsedCondition">
+            </div>
+            <div class="field-row checkboxes">
+              <label><input type="checkbox" id="parsedBox"> Box</label>
+              <label><input type="checkbox" id="parsedPapers"> Papers</label>
+            </div>
+          </div>
+          <button id="saveBtn" class="btn btn-success">Save Listing</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Export Tab -->
+    <div id="exportTab" class="tab-content">
+      <div class="export-options">
+        <h3>Export Data</h3>
+        <p class="hint">Download your collected watch listings</p>
+
+        <div class="export-buttons">
+          <button id="exportCSV" class="btn btn-primary">
+            <span>📊</span> Export as CSV
+          </button>
+          <button id="exportJSON" class="btn btn-secondary">
+            <span>📁</span> Export as JSON
+          </button>
+        </div>
+
+        <h3>Data Management</h3>
+        <div class="danger-zone">
+          <button id="clearData" class="btn btn-danger">
+            Clear All Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../parser.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
