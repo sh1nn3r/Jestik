@@ -1,10 +1,10 @@
 Collection title,Rule: product tag equals,Product count
 Keyboards,Keyboards,96
 Free Shipping,Free Shipping,79
+Office Master (OM Seating) ,Office Master (OM Seating) ,67
 Accessories,Accessories,65
 Chairs & Seating,Chairs & Seating,64
 Keyboard Trays & Arms,Keyboard Trays & Arms,62
-Office Master (OM Seating) ,Office Master (OM Seating) ,56
 Adaptive - ADA,Adaptive - ADA,47
 Keyboard Trays,Keyboard Trays,45
 Chairs,Chairs,44
@@ -14,13 +14,14 @@ Workstation Accessories,Workstation Accessories,40
 Mice,Mice,35
 Humanscale,Humanscale,34
 Education,Education,28
+Peerless-AV,Peerless-AV,25
 Monitor Accessories,Monitor Accessories,25
 MAC,MAC,25
 Monitor Arms,Monitor Arms,25
-Peerless-AV,Peerless-AV,24
 Wireless,Wireless,24
 Keyboard,Keyboard,22
 Sit-Stand Stations,Sit-Stand Stations,21
+Ergotron,Ergotron,19
 Back Cushions,Back Cushions,19
 Keyboard Platforms,Keyboard Platforms,19
 Display & TV Mounts,Display & TV Mounts,18
@@ -28,7 +29,6 @@ ergonomic,ergonomic,18
 Seat Cushions,Seat Cushions,17
 backlit keyboard,backlit keyboard,17
 Palm Rests ,Palm Rests ,16
-Ergotron,Ergotron,16
 For Your Vehicle,For Your Vehicle,16
 Health,Health,16
 ergonomic keyboard,ergonomic keyboard,15
@@ -47,9 +47,11 @@ Vehicle Desks,Vehicle Desks,11
 humanscale,humanscale,11
 Air Filters,Air Filters,11
 Footrests,Footrests,10
+Arms and Arm Pads,Arms and Arm Pads,10
 Split,Split,10
 wrist pain relief,wrist pain relief,10
 Mini /Travel,Mini /Travel,10
+Ergotron Accessories,Ergotron Accessories,9
 Goldtouch,Goldtouch,9
 Mac keyboard,Mac keyboard,9
 Classic Series,Classic Series,8
@@ -62,6 +64,7 @@ Bags & Organizers,Bags & Organizers,8
 Extreme,Extreme,8
 Goldtouch ,Goldtouch ,7
 Ergonomic Accessories,Ergonomic Accessories,7
+Mount Accessories,Mount Accessories,7
 ergonomic chair,ergonomic chair,7
 Stands & Risers,Stands & Risers,7
 mechanical keyboard,mechanical keyboard,7
@@ -71,10 +74,8 @@ Multi-Message,Multi-Message,7
 Vertical & Contoured,Vertical & Contoured,7
 Paramount Value Series,Paramount Value Series,6
 24-Seven Intensive Use,24-Seven Intensive Use,6
-Arms and Arm Pads,Arms and Arm Pads,6
 Neutral Posture,Neutral Posture,6
 Wall - Flat ,Wall - Flat ,6
-Ergotron Accessories,Ergotron Accessories,6
 Chair Accessories,Chair Accessories,6
 lumbar-support,lumbar-support,6
 bluetooth keyboard,bluetooth keyboard,6
@@ -94,7 +95,7 @@ Track Length Mechanism,Track Length Mechanism,5
 Classic Healthcare Stools,Classic Healthcare Stools,5
 Work Stools,Work Stools,5
 YES Series,YES Series,5
-Mount Accessories,Mount Accessories,5
+Office Master Casters,Office Master Casters,5
 titan,titan,5
 bluetooth-keyboard,bluetooth-keyboard,5
 shortcut-keyboard,shortcut-keyboard,5
@@ -114,6 +115,7 @@ Arm Accessories,Arm Accessories,4
 Patriot Series,Patriot Series,4
 WristRester,WristRester,4
 3M,3M,4
+Discovery Back Series,Discovery Back Series,4
 Wall Mounts,Wall Mounts,4
 Single Monitor Mounts,Single Monitor Mounts,4
 High Performance,High Performance,4
@@ -307,8 +309,6 @@ Fixed Mount Arms,Fixed Mount Arms,1
 Other Manufacturers,Other Manufacturers,1
 Drafting Chairs and Stools,Drafting Chairs and Stools,1
 3M Document Holders,3M Document Holders,1
-Discovery Back Series,Discovery Back Series,1
-Office Master Casters,Office Master Casters,1
 Arm Mechanism,Arm Mechanism,1
 Desk Mounts,Desk Mounts,1
 Single Monitor Arms,Single Monitor Arms,1
@@ -322,6 +322,8 @@ Peerless Accessories,Peerless Accessories,1
 3M Footrests,3M Footrests,1
 3M Monitor/Laptop Stands,3M Monitor/Laptop Stands,1
 LX Accessories,LX Accessories,1
+StyleView Accessories,StyleView Accessories,1
+Digital Signage Solutions,Digital Signage Solutions,1
 headrest,headrest,1
 mesh chair,mesh chair,1
 premium chair,premium chair,1

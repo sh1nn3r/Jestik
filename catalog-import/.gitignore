@@ -1,3 +1,4 @@
 data/*.log
 data/batch_state.json
 __pycache__/
+data/ergodirect.jsonl
