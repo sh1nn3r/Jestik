@@ -1,30 +1,31 @@
 Collection title,Rule: product tag equals,Product count
 Keyboards,Keyboards,96
 Free Shipping,Free Shipping,79
-Accessories,Accessories,64
+Accessories,Accessories,65
 Chairs & Seating,Chairs & Seating,64
-Keyboard Trays & Arms,Keyboard Trays & Arms,59
+Keyboard Trays & Arms,Keyboard Trays & Arms,62
+Office Master (OM Seating) ,Office Master (OM Seating) ,56
 Adaptive - ADA,Adaptive - ADA,47
+Keyboard Trays,Keyboard Trays,45
+Chairs,Chairs,44
 Eyewear,Eyewear,42
+Workrite Ergonomics,Workrite Ergonomics,40
 Workstation Accessories,Workstation Accessories,40
-Workrite Ergonomics,Workrite Ergonomics,37
-Chairs,Chairs,37
 Mice,Mice,35
-Keyboard Trays,Keyboard Trays,30
+Humanscale,Humanscale,34
 Education,Education,28
-Office Master (OM Seating) ,Office Master (OM Seating) ,26
 Monitor Accessories,Monitor Accessories,25
 MAC,MAC,25
 Monitor Arms,Monitor Arms,25
 Wireless,Wireless,24
 Keyboard,Keyboard,22
 Sit-Stand Stations,Sit-Stand Stations,21
-Humanscale,Humanscale,20
 Back Cushions,Back Cushions,19
 Keyboard Platforms,Keyboard Platforms,19
 ergonomic,ergonomic,18
 Seat Cushions,Seat Cushions,17
 backlit keyboard,backlit keyboard,17
+Palm Rests ,Palm Rests ,16
 For Your Vehicle,For Your Vehicle,16
 Health,Health,16
 ergonomic keyboard,ergonomic keyboard,15
@@ -37,16 +38,19 @@ Speech Generating Devices,Speech Generating Devices,13
 Adjustable Tables,Adjustable Tables,12
 Adaptive Switches,Adaptive Switches,12
 Complete Systems,Complete Systems,12
+Keyboard Tray Accessories,Keyboard Tray Accessories,11
+BC Series,BC Series,11
 Vehicle Desks,Vehicle Desks,11
 humanscale,humanscale,11
 Air Filters,Air Filters,11
 Footrests,Footrests,10
+Ergotron,Ergotron,10
 Split,Split,10
 wrist pain relief,wrist pain relief,10
 Mini /Travel,Mini /Travel,10
 Goldtouch,Goldtouch,9
 Mac keyboard,Mac keyboard,9
-Keyboard Tray Accessories,Keyboard Tray Accessories,8
+Classic Series,Classic Series,8
 RSI prevention,RSI prevention,8
 ergonomic mouse,ergonomic mouse,8
 Laptop Accessories,Laptop Accessories,8
@@ -54,7 +58,7 @@ Wired,Wired,8
 Bags & Organizers,Bags & Organizers,8
 Extreme,Extreme,8
 Goldtouch ,Goldtouch ,7
-Classic Series,Classic Series,7
+Ergonomic Accessories,Ergonomic Accessories,7
 ergonomic chair,ergonomic chair,7
 Stands & Risers,Stands & Risers,7
 mechanical keyboard,mechanical keyboard,7
@@ -62,7 +66,10 @@ Table Accessories,Table Accessories,7
 back pain relief,back pain relief,7
 Multi-Message,Multi-Message,7
 Vertical & Contoured,Vertical & Contoured,7
+Paramount Value Series,Paramount Value Series,6
 24-Seven Intensive Use,24-Seven Intensive Use,6
+Arms and Arm Pads,Arms and Arm Pads,6
+Neutral Posture,Neutral Posture,6
 Chair Accessories,Chair Accessories,6
 lumbar-support,lumbar-support,6
 bluetooth keyboard,bluetooth keyboard,6
@@ -75,14 +82,16 @@ TAA Compliant,TAA Compliant,6
 Hands Free,Hands Free,6
 PC keyboard,PC keyboard,6
 video editing keyboard,video editing keyboard,6
-Desk Accessory,Desk Accessory,6
 Switches Medium,Switches Medium,6
 Left Handed,Left Handed,6
 Pinnacle 2 Arm,Pinnacle 2 Arm,5
-Paramount Value Series,Paramount Value Series,5
 Track Length Mechanism,Track Length Mechanism,5
-Ergonomic Accessories,Ergonomic Accessories,5
 Classic Healthcare Stools,Classic Healthcare Stools,5
+Work Stools,Work Stools,5
+YES Series,YES Series,5
+Peerless-AV,Peerless-AV,5
+Display & TV Mounts,Display & TV Mounts,5
+Wall - Flat ,Wall - Flat ,5
 titan,titan,5
 bluetooth-keyboard,bluetooth-keyboard,5
 shortcut-keyboard,shortcut-keyboard,5
@@ -95,9 +104,15 @@ Rollerbars,Rollerbars,5
 accessibility,accessibility,5
 wrist support,wrist support,5
 For Your Smart Device,For Your Smart Device,5
+Desk Accessory,Desk Accessory,5
 ergonomic desk,ergonomic desk,5
 Monitor Arm,Monitor Arm,5
 Arm Accessories,Arm Accessories,4
+Patriot Series,Patriot Series,4
+WristRester,WristRester,4
+Wall Mounts,Wall Mounts,4
+Single Monitor Mounts,Single Monitor Mounts,4
+High Performance,High Performance,4
 Sit Stand retrofit,Sit Stand retrofit,4
 windows-keyboard,windows-keyboard,4
 mac-keyboard,mac-keyboard,4
@@ -128,7 +143,11 @@ Keyboards & Keypads,Keyboards & Keypads,3
 Ergonomic Chairs,Ergonomic Chairs,3
 Mouse Platforms,Mouse Platforms,3
 Pinnacle 2 Extended,Pinnacle 2 Extended,3
+VuRyte,VuRyte,3
 24-Seven Heavy Duty Series,24-Seven Heavy Duty Series,3
+Classic Lab Stools,Classic Lab Stools,3
+Side/Guest Chairs,Side/Guest Chairs,3
+Monitor Stand,Monitor Stand,3
 keyboard tray,keyboard tray,3
 sit-stand,sit-stand,3
 office chair,office chair,3
@@ -139,10 +158,7 @@ Monitor Stands,Monitor Stands,3
 Kinesis,Kinesis,3
 adjustable keyboard,adjustable keyboard,3
 Workrite,Workrite,3
-ergonomic footrest,ergonomic footrest,3
-office footrest,office footrest,3
 ambidextrous mouse,ambidextrous mouse,3
-Footrest,Footrest,3
 ergonomic microscope,ergonomic microscope,3
 stereo zoom microscope,stereo zoom microscope,3
 Numeric Keypads,Numeric Keypads,3
@@ -169,12 +185,11 @@ Adaptive Mounting,Adaptive Mounting,3
 task chair,task chair,3
 standing desk converter,standing desk converter,3
 carpal tunnel relief,carpal tunnel relief,3
+CPU Holders,CPU Holders,2
 Gemini,Gemini,2
-Patriot Series,Patriot Series,2
 Desk Corner Solutions,Desk Corner Solutions,2
-BC Series,BC Series,2
-Palm Rests ,Palm Rests ,2
-Classic Lab Stools,Classic Lab Stools,2
+Ergotron Multi Monitor Arms,Ergotron Multi Monitor Arms,2
+Laboratory/Healthcare Chairs,Laboratory/Healthcare Chairs,2
 ergocentric,ergocentric,2
 laboratory,laboratory,2
 Adjustable Height Desk,Adjustable Height Desk,2
@@ -268,8 +283,6 @@ HEPA filter,HEPA filter,2
 Ergonomic Mouse,Ergonomic Mouse,2
 vesa mount,vesa mount,2
 ALPS keyboard,ALPS keyboard,2
-foot rocker,foot rocker,2
-lower back pain,lower back pain,2
 Activity Supports,Activity Supports,2
 Wireless Switches,Wireless Switches,2
 ergonomic workstation,ergonomic workstation,2
@@ -281,12 +294,19 @@ office chair cushion,office chair cushion,2
 Corner Makers,Corner Makers,2
 Carpal Tunnel Relief,Carpal Tunnel Relief,2
 Keyboard Systems,Keyboard Systems,1
-CPU Holders,CPU Holders,1
 Fixed Mount Arms,Fixed Mount Arms,1
-WristRester,WristRester,1
 Other Manufacturers,Other Manufacturers,1
-VuRyte,VuRyte,1
-Arms and Arm Pads,Arms and Arm Pads,1
+Drafting Chairs and Stools,Drafting Chairs and Stools,1
+3M,3M,1
+3M Document Holders,3M Document Holders,1
+Discovery Back Series,Discovery Back Series,1
+Office Master Casters,Office Master Casters,1
+Arm Mechanism,Arm Mechanism,1
+Desk Mounts,Desk Mounts,1
+Single Monitor Arms,Single Monitor Arms,1
+Task Seating,Task Seating,1
+Task Chairs,Task Chairs,1
+Industrial and Healthcare,Industrial and Healthcare,1
 headrest,headrest,1
 mesh chair,mesh chair,1
 premium chair,premium chair,1
@@ -338,6 +358,8 @@ ergonomic document holder,ergonomic document holder,1
 monitor document holder,monitor document holder,1
 Ergonomic Footrest,Ergonomic Footrest,1
 adjustable footrest,adjustable footrest,1
+ergonomic footrest,ergonomic footrest,1
+office footrest,office footrest,1
 wide footrest,wide footrest,1
 car desk,car desk,1
 field work,field work,1
@@ -367,6 +389,7 @@ hemorrhoid cushion,hemorrhoid cushion,1
 post surgery cushion,post surgery cushion,1
 pregnancy cushion,pregnancy cushion,1
 tailbone pain relief,tailbone pain relief,1
+Footrest,Footrest,1
 500 lb capacity,500 lb capacity,1
 bariatric step stool,bariatric step stool,1
 heavy duty step,heavy duty step,1
@@ -515,7 +538,6 @@ AbleNet compatible,AbleNet compatible,1
 accessibility equipment,accessibility equipment,1
 ergonomic positioning,ergonomic positioning,1
 mounting solutions,mounting solutions,1
-CPU Holder,CPU Holder,1
 computer-mount,computer-mount,1
 cpu-holder,cpu-holder,1
 desk-organization,desk-organization,1
@@ -570,7 +592,6 @@ monitor mount,monitor mount,1
 compact monitor mount,compact monitor mount,1
 premium office chair,premium office chair,1
 full-size keyboard,full-size keyboard,1
-affordable footrest,affordable footrest,1
 Switch Interface,Switch Interface,1
 Wired Switches,Wired Switches,1
 Environmental Control Units,Environmental Control Units,1
