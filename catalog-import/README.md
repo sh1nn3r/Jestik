@@ -17,7 +17,7 @@ jestik.com.
 pip install -r requirements.txt
 
 python scrape_askergoworks.py        # ~1 min, Shopify products.json
-python scrape_ergodirect.py          # ~1-2 h at 1 req/s, resumable
+python scrape_ergodirect.py          # ~1-2 h at 1 req/s, resumable; skips discontinued products
 
 export ANTHROPIC_API_KEY=...         # https://console.anthropic.com
 python write_descriptions.py submit  # Batches API (50% cheaper)
