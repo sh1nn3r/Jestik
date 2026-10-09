@@ -61,3 +61,16 @@ def main_collections(product):
     text = text.lower()
     found = [title for title, rx in _COMPILED if rx.search(text)]
     return found or ["Accessories"]
+
+
+# Source stores' own house-brand items, bundles (ED-... part numbers) and services
+_HOUSE = re.compile(r"ergodirect|ask ?ergo", re.I)
+_HOUSE_SKU = re.compile(r"^ED[A-Z]?-", re.I)
+_SERVICES = re.compile(r"gift.card|on-site-installation|workstation-evaluation")
+
+
+def is_house_item(product):
+    skus = [v.get("sku") or "" for v in product.get("variants") or []] + [product.get("sku") or ""]
+    return bool(_HOUSE.search(f"{product.get('brand') or ''} {product['name']}")
+                or any(_HOUSE_SKU.match(s) for s in skus)
+                or _SERVICES.search(product.get("source_url", "")))

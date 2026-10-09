@@ -13,7 +13,7 @@ import csv
 import json
 from collections import Counter
 
-from categories import BRAND_COLLECTIONS, clean_brand, main_collections
+from categories import BRAND_COLLECTIONS, clean_brand, is_house_item, main_collections
 from common import DATA_DIR, read_jsonl, slugify
 DESCRIPTIONS = DATA_DIR / "descriptions.json"
 
@@ -48,7 +48,11 @@ def main():
     rows, seen_skus, seen_handles = [], set(), set()
     collections, vendors = Counter(), Counter()
     images = []
+    skipped = 0
     for p in products:
+        if is_house_item(p):
+            skipped += 1
+            continue
         variants = p.get("variants") or [{
             "title": "Default Title", "options": [None, None, None],
             "sku": p.get("sku"), "price": p.get("price"), "grams": None,
@@ -123,7 +127,7 @@ def main():
 
     with_body = sum(1 for r in rows if r["Body (HTML)"])
     print(f"{len(images)} products / {len(rows)} rows, {with_body} with descriptions, "
-          f"{len(collections)} collections")
+          f"{len(collections)} collections, {skipped} house-brand/service items skipped")
 
 
 if __name__ == "__main__":
