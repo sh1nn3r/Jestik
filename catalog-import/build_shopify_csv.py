@@ -13,6 +13,7 @@ import csv
 import json
 from collections import Counter
 
+from categories import BRAND_COLLECTIONS, clean_brand, main_collections
 from common import DATA_DIR, read_jsonl, slugify
 DESCRIPTIONS = DATA_DIR / "descriptions.json"
 
@@ -45,7 +46,7 @@ def main():
     products = read_jsonl(DATA_DIR / "ergodirect.jsonl") + read_jsonl(DATA_DIR / "askergoworks.jsonl")
 
     rows, seen_skus, seen_handles = [], set(), set()
-    collections = Counter()
+    collections, vendors = Counter(), Counter()
     images = []
     for p in products:
         variants = p.get("variants") or [{
@@ -57,14 +58,15 @@ def main():
             continue
         seen_skus |= skus
 
-        handle = slugify(f"{p.get('brand') or ''} {p['name']}")
+        brand = clean_brand(p.get("brand"))
+        handle = slugify(f"{brand} {p['name']}")
         while handle in seen_handles:
             handle += "-2"
         seen_handles.add(handle)
 
-        tags = [c for c in p.get("category_path", []) if c] + [t for t in p.get("tags", []) if t]
-        tags = list(dict.fromkeys(tags))
+        tags = main_collections(p)
         collections.update(tags)
+        vendors[brand] += 1
         body = descriptions.get(product_key(p), "")
         option_names = (p.get("options") or []) + [None, None, None]
 
@@ -93,14 +95,14 @@ def main():
                 row.update({
                     "Title": p["name"],
                     "Body (HTML)": body,
-                    "Vendor": p.get("brand") or "",
-                    "Type": (p.get("category_path") or [""])[-1],
+                    "Vendor": brand,
+                    "Type": tags[0],
                     "Tags": ", ".join(tags),
                     "Published": "FALSE",
                     "Status": "draft",
                 })
             rows.append(row)
-        images.append({"handle": handle, "brand": p.get("brand"), "sku": ";".join(sorted(skus)),
+        images.append({"handle": handle, "brand": brand, "sku": ";".join(sorted(skus)),
                        "title": p["name"]})
 
     with open(DATA_DIR / "shopify_products.csv", "w", newline="", encoding="utf-8") as f:
@@ -109,9 +111,11 @@ def main():
         w.writerows(rows)
     with open(DATA_DIR / "collections.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["Collection title", "Rule: product tag equals", "Product count"])
+        w.writerow(["Collection title", "Rule column", "Rule: equals", "Product count"])
         for tag, count in collections.most_common():
-            w.writerow([tag, tag, count])
+            w.writerow([tag, "TAG", tag, count])
+        for brand in BRAND_COLLECTIONS:
+            w.writerow([brand, "VENDOR", brand, vendors[brand]])
     with open(DATA_DIR / "image_sourcing.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, ["handle", "brand", "sku", "title"])
         w.writeheader()

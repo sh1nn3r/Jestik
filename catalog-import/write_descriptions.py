@@ -15,10 +15,6 @@ import json
 import sys
 import time
 
-import anthropic
-from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
-from anthropic.types.messages.batch_create_params import Request
-
 from common import DATA_DIR, read_jsonl
 
 MODEL = "claude-opus-5-5"
@@ -60,6 +56,10 @@ def facts_prompt(p):
 
 
 def submit():
+    import anthropic
+    from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+    from anthropic.types.messages.batch_create_params import Request
+
     done = json.loads(OUT.read_text()) if OUT.exists() else {}
     products = [p for p in load_products() if product_key(p) not in done]
     if not products:
@@ -87,6 +87,8 @@ def submit():
 
 
 def collect():
+    import anthropic
+
     state = json.loads(STATE.read_text())
     client = anthropic.Anthropic()
     while True:
