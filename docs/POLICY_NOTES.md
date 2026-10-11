@@ -44,3 +44,13 @@ These conflicts exist in the source policy pages (shipping, shipping-policy, ret
 20. **Phone numbers.** (888) 657-4776 appears on the returns, why-shop, dealer, and volume pages. (800) 592-8250 appears in the FAQ. (888) 377-6159 appears on the old About page. The rewritten marketing pages use (888) 657-4776. The FAQ keeps (800) 592-8250 as in its source.
 21. **Company location.** The old About page says the company is based in **Hawthorne, CA**. Other pages give 578 West Washington, Suite 447, **Marina Del Rey, CA** 90292. The rewritten About page uses Marina Del Rey.
 22. **Tax-exempt certificates.** The FAQ says resale certificates should be faxed. No fax number is published anywhere.
+
+## Resolved by owner (2026-10-11)
+- Phone number: (800) 592-8250 (replaced (888) 657-4776 on all pages).
+- Warranty: 1 year (all "lifetime" warranty wording changed to 1-year; VIP Warranty page now describes 1-year coverage).
+
+## Still open
+- Free shipping: does it include chairs and tables / corporate-priced orders?
+- Bulk returns rule: 5+ pieces or $2,500, vs 10+ of the same product or more than $2,500.
+- Return condition wording, restocking fees, ARN vs RMA, Hawthorne vs Marina Del Rey address.
+- Shopify privacy policy (checkout) still contains template placeholders such as [[INSERT AGE]].
