@@ -49,8 +49,9 @@ These conflicts exist in the source policy pages (shipping, shipping-policy, ret
 - Phone number: (800) 592-8250 (replaced (888) 657-4776 on all pages).
 - Warranty: 1 year (all "lifetime" warranty wording changed to 1-year; VIP Warranty page now describes 1-year coverage).
 
+- Free shipping: covers every product, including chairs and tables (contiguous US); exclusions removed from Shipping Policy.
+- Bulk returns: 5+ pieces or single-receipt orders of $2,500+ are non-refundable (Returns page now consistent).
+
 ## Still open
-- Free shipping: does it include chairs and tables / corporate-priced orders?
-- Bulk returns rule: 5+ pieces or $2,500, vs 10+ of the same product or more than $2,500.
 - Return condition wording, restocking fees, ARN vs RMA, Hawthorne vs Marina Del Rey address.
 - Shopify privacy policy (checkout) still contains template placeholders such as [[INSERT AGE]].
