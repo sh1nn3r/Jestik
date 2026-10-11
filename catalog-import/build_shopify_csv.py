@@ -11,6 +11,7 @@ Output: data/shopify_products.csv, data/collections.csv, data/image_sourcing.csv
 import argparse
 import csv
 import json
+import re
 from collections import Counter
 
 from categories import BRAND_COLLECTIONS, clean_brand, is_house_item, main_collections
@@ -26,8 +27,31 @@ COLUMNS = [
     "Option1 Name", "Option1 Value", "Option2 Name", "Option2 Value", "Option3 Name", "Option3 Value",
     "Variant SKU", "Variant Grams", "Variant Inventory Tracker", "Variant Inventory Policy",
     "Variant Fulfillment Service", "Variant Price", "Variant Requires Shipping", "Variant Taxable",
+    "Image Src", "Image Position", "Image Alt Text", "SEO Title", "SEO Description",
     "Status",
 ]
+
+
+def seo_title(title, brand):
+    t = title if not brand or brand.lower() in title.lower() else f"{brand} {title}"
+    t = f"{t} | Jestik"
+    return t if len(t) <= 70 else t[:67].rsplit(" ", 1)[0] + "…"
+
+
+def seo_description(body_html, title):
+    m = re.search(r"<p>(.*?)</p>", body_html or "", re.S)
+    text = re.sub(r"<[^>]+>", "", m.group(1) if m else "") or f"Shop {title} at Jestik."
+    text = re.sub(r"\s+", " ", text).strip() + " Free shipping on everything."
+    return text if len(text) <= 155 else text[:152].rsplit(" ", 1)[0] + "…"
+
+
+def load_images():
+    images = {}
+    for name in ("images_ergodirect.json", "images_askergoworks.json"):
+        path = DATA_DIR / name
+        if path.exists():
+            images.update(json.loads(path.read_text()))
+    return images
 
 
 def price(value, markup):
@@ -43,6 +67,7 @@ def main():
     args = ap.parse_args()
 
     descriptions = json.loads(DESCRIPTIONS.read_text()) if DESCRIPTIONS.exists() else {}
+    img_map = load_images()
     products = read_jsonl(DATA_DIR / "ergodirect.jsonl") + read_jsonl(DATA_DIR / "askergoworks.jsonl")
 
     rows, seen_skus, seen_handles = [], set(), set()
@@ -104,8 +129,19 @@ def main():
                     "Tags": ", ".join(tags),
                     "Published": "FALSE",
                     "Status": "draft",
+                    "SEO Title": seo_title(p["name"], brand),
+                    "SEO Description": seo_description(body, p["name"]),
                 })
             rows.append(row)
+        for pos, src in enumerate(img_map.get(p["source_url"], [])[:8], 1):
+            if pos == 1:
+                rows[-len(variants)]["Image Src"] = src
+                rows[-len(variants)]["Image Position"] = 1
+                rows[-len(variants)]["Image Alt Text"] = p["name"]
+            else:
+                extra = dict.fromkeys(COLUMNS, "")
+                extra.update({"Handle": handle, "Image Src": src, "Image Position": pos, "Image Alt Text": p["name"]})
+                rows.append(extra)
         images.append({"handle": handle, "brand": brand, "sku": ";".join(sorted(skus)),
                        "title": p["name"]})
 
