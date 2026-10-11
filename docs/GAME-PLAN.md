@@ -41,3 +41,18 @@
 - Restyle the blog in the new design (theme sections are ready)
 - Refresh existing posts (update content, then the date) and publish 2–4 sizing/fit guides a month with embedded products
 - ErgoDirect's blog has mostly stopped (about one post a year since 2022), so consistent posting is an easy win
+
+## Phase 3 build order (from competitor feature audit, 2026-10-11)
+Full catalogue: `docs/competitor-features.json` (67 features). Built so far: Workspace Fit Calculator (`/pages/workspace-calculator`), Monitor Arm Finder (`/pages/monitor-arm-finder`).
+
+1. Faceted filters on every collection (specs metafields: screens, mount, motion, weight capacity, screen size, chair style/features, layout, connection, switches, mouse style, hand, lift, tray component, color).
+2. Chair Finder that shows matched chairs instantly (theirs only emails a lead).
+3. 7-question workstation self-check with score, fixes and product links.
+4. "Where it hurts" symptom guide (neck, shoulders, back, wrists, legs).
+5. Seat height / cylinder checker and chair measuring guides.
+6. Standing desk vs converter chooser.
+7. Product-page add-ons and "complete the setup" bundles.
+8. Volume pricing + Teams program page (approved catalog, Net-30 application, account manager).
+9. Product Q&A feeding a FAQ hub; downloads tab (spec sheets, drawings).
+10. Reviews with star breakdown; cart free-shipping/rewards bar; Shop Pay Installments; live chat.
+11. Clear returns policy and per-product lead-time messaging (their weakest area).
