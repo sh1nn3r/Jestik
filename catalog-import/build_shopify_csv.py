@@ -88,7 +88,8 @@ def main():
         seen_skus |= skus
 
         brand = clean_brand(p.get("brand"))
-        handle = slugify(f"{brand} {p['name']}")
+        name_l = p["name"].lower()
+        handle = slugify(p["name"] if not brand or name_l.startswith(brand.lower()) or brand.lower() in name_l else f"{brand} {p['name']}")
         while handle in seen_handles:
             handle += "-2"
         seen_handles.add(handle)

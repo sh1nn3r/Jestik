@@ -5,11 +5,11 @@ import re
 MAIN_COLLECTIONS = [
     ("Chairs", r"\bchairs?\b|seating|\bstools?\b"),
     ("Chair Accessories", r"caster|arm pads?|chair arms?|\bcushions?\b|headrest|lumbar"),
+    ("Keyboard Trays", r"keyboard (tray|platform|arm|drawer|shel)"),
     ("Keyboards", r"keyboards?(?! tray| platform| arm| drawer| shel)|keypads?"),
     ("Split Keyboards", r"\bsplit\b"),
-    ("Mice", r"\bmouse\b|\bmice\b|trackball|touchpad"),
+    ("Mice", r"\bmouse\b(?! platform| tray| board| surface| keyboard platform)|\bmice\b|trackball|touchpad"),
     ("Vertical Mice", r"vertical mouse|vertical mice|handshoe"),
-    ("Keyboard Trays", r"keyboard (tray|platform|arm|drawer|shel)"),
     ("Monitor Arms", r"monitor (arm|mount)|lcd arm|multi.?monitor|flat panel (arm|desk)|desk mount|dual monitor|triple monitor|quad monitor"),
     ("Monitor Stands", r"monitor (stand|riser)"),
     ("Laptop & Tablet Mounts", r"laptop|tablet|ipad"),
