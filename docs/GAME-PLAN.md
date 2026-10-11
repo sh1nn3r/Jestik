@@ -4,11 +4,20 @@
 - [x] Scrape ErgoDirect (2,782 live products) and AskErgoWorks (505), with source approval for content and images
 - [x] Original, SEO-written description for every product; SEO title and meta description
 - [x] 30 main category collections + 8 brand collections (rule-based) created and published
-- [ ] Finish ErgoDirect image grab
-- [ ] Bulk-import ~2,950 new products to Shopify as DRAFT (skips the 186 already in the store)
+- [x] Finish ErgoDirect image grab (all 2,784 products have images)
+- [ ] Owner imports `catalog-import/data/shopify_products_NEW.csv` (2,950 new products, DRAFT) in Shopify admin → Products → Import
+- [ ] After import: add new products to the existing hand-picked collections (Chairs, Keyboards, Mouse, Monitor Arms, Desks, Keyboard Trays, Accessories)
 - [ ] Review prices/margins, then bulk-publish
 
+## Phase 1b: Refresh the existing 775 products and audit the whole site
+- [ ] Pull every existing product (bulk query) and flag missing or thin descriptions, missing SEO, bad images, wrong vendor/type, broken variants
+- [ ] Rewrite descriptions and SEO for the existing products in the same style
+- [ ] Clean up vendors (CHIEF vs Chief, Hat Design Works) and product types; fix tags so products land in the new collections
+- [ ] Audit every page and the old Shogun landing pages; remove dead pages, redirect old URLs, fix broken links
+- [ ] Policies, About, Contact, FAQ, Shipping: refresh the copy
+
 ## Phase 2: Launch the new theme
+- [x] Mega menu (5 category columns + promo card) and Brands dropdown
 - [x] "Jestik – Bezel × Asset Desk" theme (unpublished): Lovable banner + search card, Bezel-style grids, quote pop-up, sharp product photos
 - [ ] Owner review in Customize, then Publish (Online Store → Themes)
 
