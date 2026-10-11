@@ -33,9 +33,19 @@ COLUMNS = [
 
 
 def seo_title(title, brand):
+    norm = lambda x: re.sub(r"\s+", " ", x or "").strip()
+    title, brand = norm(title), norm(brand)
     t = title if not brand or brand.lower() in title.lower() else f"{brand} {title}"
-    t = f"{t} | Jestik"
-    return t if len(t) <= 70 else t[:67].rsplit(" ", 1)[0] + "…"
+    if len(t) + 9 <= 70:
+        return f"{t} | Jestik"
+    if len(t) > 70 and t is not title:
+        t = title  # drop the brand prefix before cutting words
+    if len(t) <= 70:
+        return t
+    t = t[:70].rsplit(" ", 1)[0]
+    while re.search(r"(?i)[\s\-–,/|(]+(with|and|w/?|for|or|the|of|to|in|on)?$", t) and len(t) > 30:
+        t = re.sub(r"(?i)[\s\-–,/|(]+(with|and|w/?|for|or|the|of|to|in|on)?$", "", t).rsplit(" ", 1)[0] if re.search(r"(?i)\s(with|and|w/?|for|or|the|of|to|in|on)$", t) else re.sub(r"[\s\-–,/|(]+$", "", t)
+    return t
 
 
 def seo_description(body_html, title):
