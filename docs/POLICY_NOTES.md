@@ -53,5 +53,5 @@ These conflicts exist in the source policy pages (shipping, shipping-policy, ret
 - Bulk returns: 5+ pieces or single-receipt orders of $2,500+ are non-refundable (Returns page now consistent).
 
 ## Still open
-- Return condition wording, restocking fees, ARN vs RMA, Hawthorne vs Marina Del Rey address.
+- Return condition wording, restocking fees, ARN vs RMA, (address resolved: Marina Del Rey)
 - Shopify privacy policy (checkout) still contains template placeholders such as [[INSERT AGE]].
