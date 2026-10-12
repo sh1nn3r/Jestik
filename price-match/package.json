@@ -1,0 +1,13 @@
+{
+  "name": "price-match",
+  "version": "0.1.0",
+  "description": "Finds competitor prices for our watch catalog and suggests price matches (report only)",
+  "type": "module",
+  "private": true,
+  "bin": { "price-match": "src/cli.js" },
+  "scripts": {
+    "report": "node src/cli.js",
+    "test": "node --test test/"
+  },
+  "engines": { "node": ">=20" }
+}

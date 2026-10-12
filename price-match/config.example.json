@@ -1,0 +1,33 @@
+{
+  "ownDomains": ["chronocandy.com"],
+
+  "pricing": {
+    "undercut": 0,
+    "minMarginPct": 8,
+    "maxDropPct": 5,
+    "ignoreBelowPct": 60,
+    "roundTo": 1
+  },
+
+  "sources": [
+    {
+      "id": "example-shopify-competitor",
+      "type": "shopify-store",
+      "name": "Example Competitor",
+      "domain": "competitor-example.com",
+      "enabled": false
+    },
+    {
+      "id": "google-shopping",
+      "type": "serpapi",
+      "engine": "google_shopping",
+      "enabled": false
+    },
+    {
+      "id": "bing-shopping",
+      "type": "serpapi",
+      "engine": "bing_shopping",
+      "enabled": false
+    }
+  ]
+}
