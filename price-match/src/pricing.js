@@ -3,7 +3,8 @@
  *
  * Rules, in order:
  *  - Only matched listings are considered. High-confidence matches are
- *    preferred; medium ones are used only when there is nothing better.
+ *    preferred. Medium ones are only shown for review unless
+ *    minConfidence is 'medium'.
  *  - Prices far below ours (ignoreBelowPct) are treated as suspicious: wrong
  *    item, a strap, a deposit, or a scam listing. They are reported, not used.
  *  - The suggested price never goes below the floor:
@@ -16,7 +17,10 @@ export const DEFAULT_PRICING = {
   minMarginPct: 8,
   maxDropPct: 5,
   ignoreBelowPct: 60,
-  roundTo: 1
+  roundTo: 1,
+  // 'high': only confirmed matches drive a suggestion; medium ones are
+  // reported as 'review'. 'medium': use medium matches when nothing better.
+  minConfidence: 'high'
 };
 
 export function floorPrice(product, rules) {
@@ -62,6 +66,11 @@ export function suggest(product, offers, rules = DEFAULT_PRICING) {
 
   if (!lowest) {
     return { ...base, action: 'no-match', suggestedPrice: null };
+  }
+
+  if (!high.length && rules.minConfidence === 'high') {
+    const action = lowest.price < product.price ? 'review' : 'already-lowest';
+    return { ...base, action, suggestedPrice: null };
   }
 
   if (lowest.price >= product.price) {

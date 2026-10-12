@@ -30,6 +30,14 @@ test('ignores implausibly low prices', () => {
   assert.equal(r.suspiciousOffers, 1);
 });
 
+test('medium-only matches are flagged for review, not priced', () => {
+  const r = suggest({ price: 22220, cost: null }, [offer(21000, 'medium')], rules);
+  assert.equal(r.action, 'review');
+  assert.equal(r.suggestedPrice, null);
+  const loose = suggest({ price: 22220, cost: null }, [offer(21500, 'medium')], { ...rules, minConfidence: 'medium' });
+  assert.equal(loose.suggestedPrice, 21500);
+});
+
 test('prefers high-confidence matches over cheaper medium ones', () => {
   const r = suggest({ price: 22220, cost: null }, [offer(21200, 'medium'), offer(21800)], rules);
   assert.equal(r.lowestOffer.price, 21800);

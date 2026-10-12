@@ -19,13 +19,17 @@ retired its search APIs, and for watches Bing mostly finds the same sellers.
 
 1. The **reference number** must appear in it (`278384RBR` matches
    `278384RBR-0005` but not `278384`).
-2. The **dial** must not contradict ours. A pink dial is never compared to a
-   grey one. Case metal ("white gold") is ignored when reading dial colors.
-3. The **condition** must not contradict ours. Unworn is never compared to
+2. The **dial** must not contradict ours: color (slate is not rhodium,
+   mother-of-pearl is not white), hour markers (Roman, Arabic, index,
+   diamond) and pattern (motif, star, floral). Case metal and bezel words are
+   ignored when reading the dial.
+3. The **bracelet** must not contradict ours (Oyster, Jubilee, President).
+4. The **condition** must not contradict ours. Unworn is never compared to
    pre-owned.
+5. **Modified** watches ("custom", "aftermarket", "iced out") are never used.
 
-When the dial or condition is missing from a listing it is still used, but
-marked *medium* confidence. High-confidence matches always win.
+When a listing leaves out the dial, condition, or diamond markers, it is
+marked *medium* confidence and listed for review instead of priced.
 
 ## Pricing rules (`pricing` in `config.json`)
 
@@ -36,6 +40,7 @@ marked *medium* confidence. High-confidence matches always win.
 | `maxDropPct` | `5` | Never suggest dropping more than this % in one week. |
 | `ignoreBelowPct` | `60` | Prices under this % of ours are treated as suspicious (wrong item, deposit, scam) and not used. |
 | `roundTo` | `1` | Round suggested prices to this many dollars. |
+| `minConfidence` | `high` | Only confirmed matches (dial, markers and condition all agree) produce a suggested price. Others are listed as `review`. |
 
 ## The report
 
@@ -46,6 +51,7 @@ column says what to do:
 - `match`: a competitor is lower. Suggested price matches them.
 - `partial-to-floor`: a competitor is lower than we can go. Suggested price is our floor.
 - `below-floor`: a competitor is lower, and we're already at the floor.
+- `review`: a competitor looks cheaper, but their listing doesn't confirm the dial or condition. Check by eye.
 - `already-lowest`: nobody is cheaper.
 - `no-match`: no competitor lists this watch.
 - `skipped`: we couldn't read a reference number from the SKU.

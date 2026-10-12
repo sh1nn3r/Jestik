@@ -25,7 +25,7 @@ const COLUMNS = [
 ];
 
 // Rows a person should look at first.
-const ORDER = ['match', 'partial-to-floor', 'below-floor', 'already-lowest', 'no-match', 'skipped'];
+const ORDER = ['match', 'partial-to-floor', 'below-floor', 'review', 'already-lowest', 'no-match', 'skipped'];
 
 function csvCell(value) {
   if (value == null) return '';
