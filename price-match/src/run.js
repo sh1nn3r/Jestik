@@ -11,6 +11,15 @@ function isOwnListing(listing, ownDomains) {
 }
 
 export async function runPriceMatch({ catalog, sources, pricing, ownDomains = [], log = () => {} }) {
+  for (const source of sources) {
+    if (!source.prepare) continue;
+    try {
+      await source.prepare(catalog);
+    } catch (err) {
+      log(`${source.id}: setup failed, skipping it this run: ${err.message}`);
+    }
+  }
+
   const results = [];
   let i = 0;
   for (const product of catalog) {

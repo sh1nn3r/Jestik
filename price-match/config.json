@@ -19,14 +19,13 @@
     },
     {
       "id": "google-shopping",
-      "type": "serpapi",
-      "engine": "google_shopping",
+      "type": "dataforseo",
       "enabled": false
     },
     {
-      "id": "bing-shopping",
+      "id": "google-shopping-serpapi",
       "type": "serpapi",
-      "engine": "bing_shopping",
+      "engine": "google_shopping",
       "enabled": false
     }
   ]
