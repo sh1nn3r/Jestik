@@ -2,6 +2,7 @@
   "ownDomains": [
     "chronocandy.com"
   ],
+  "ourCondition": null,
   "pricing": {
     "undercut": 0,
     "minMarginPct": 8,

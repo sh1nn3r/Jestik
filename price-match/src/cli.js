@@ -76,6 +76,9 @@ async function main() {
       shop: env.SHOPIFY_STORE, token: env.SHOPIFY_ADMIN_TOKEN, storefrontDomain, limit
     });
   }
+  // Overrides the condition read from our own listings, for when the site's
+  // tags don't reflect the real condition of the stock.
+  if (config.ourCondition) catalog = catalog.map(p => ({ ...p, condition: config.ourCondition }));
   if (args.sku) catalog = catalog.filter(p => p.sku === args.sku);
   if (limit) catalog = catalog.slice(0, limit);
   log(`catalog: ${catalog.length} items`);

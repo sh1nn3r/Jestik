@@ -31,6 +31,10 @@ retired its search APIs, and for watches Bing mostly finds the same sellers.
 When a listing leaves out the dial, condition, or diamond markers, it is
 marked *medium* confidence and listed for review instead of priced.
 
+If our listings' condition tags aren't reliable, set `"ourCondition"` in
+`config.json` to `"pre-owned"` or `"unworn"` to treat every one of our watches
+that way. Leave it `null` to read the condition from each listing.
+
 ## Pricing rules (`pricing` in `config.json`)
 
 | Setting | Default | Meaning |
