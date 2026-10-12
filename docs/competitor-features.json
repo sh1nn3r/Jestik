@@ -1,0 +1,672 @@
+[
+ {
+  "site": "ergodirect.com",
+  "name": "Chair Finder (human-reviewed questionnaire, 'Aligna' assistant)",
+  "url": "https://www.ergodirect.com/chair-finder",
+  "category": "interactive_tool",
+  "description": "Multi-question chair-fit questionnaire fronted by a named virtual assistant persona. Answers are sent to human ergonomic specialists who email back personalized chair recommendations, free and no-obligation. Optional upsell to a paid online assessment with an independent certified ergonomist.",
+  "mechanics": "Inputs: height (4'10\"-6'8\"+), weight band (to 701+ lbs), upholstery, headrest, lumbar vs flat back, cushion firmness, sitting posture (upright/forward/reclined), fixed vs adjustable desk, desk height at lowest position, keyboard on desk vs tray, budget band, delivery region, free-text discomfort, opt-in to $100/$150 ergonomist consult, contact. Output: lead form submission -> email recommendations from staff (no instant result).",
+  "value": "high",
+  "notes": "Lead-gen, not instant. Instant on-page results would beat it; delivery region question surfaces showroom."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Monitor Arm Finder",
+  "url": "https://www.ergodirect.com/monitor-arm-finder",
+  "category": "interactive_tool",
+  "description": "Questionnaire for choosing a monitor arm/mount. Specialists review answers and email recommendations.",
+  "mechanics": "Inputs: mount type (clamp/grommet/bolt-through/wall/pole/ceiling/cart), number+layout of monitors (1-6, rows/stacked), monitor weight band, monitor size, height-adjustment range needed (incl. 20\"+ sit-stand), horizontal reach, design tier (best-in-class/value/minimum cost), sit vs sit-stand, delivery region, user height, contact. Output: emailed recommendations.",
+  "value": "high",
+  "notes": "Lacks an automatic VESA/weight compatibility check; Jestik could output matching arms instantly."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Standing Desk Finder",
+  "url": "https://www.ergodirect.com/standing-desk-finder",
+  "category": "interactive_tool",
+  "description": "Questionnaire for full height-adjustable desks with explanations of each lift mechanism and surface shape/size picker.",
+  "mechanics": "Inputs: user height, mechanism (electric/pneumatic/crank/pin-set, each explained), surface shape (rectangular, equal corner 2/3-leg, offset L 2/3-leg), surface size list, left/right orientation, budget, delivery, contact. Output: emailed recommendations. Includes an ergonomic evaluation widget below.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Desk Finder (standing desk vs converter chooser)",
+  "url": "https://www.ergodirect.com/desk-finder",
+  "category": "interactive_tool",
+  "description": "Gateway page that asks whether you want a full standing desk or a desk converter, with a side-by-side comparison table to help decide, and links to all other finders.",
+  "mechanics": "Input: one choice (standing desk / converter). Output: routes to the specific finder. Static comparison table rows: what it is, what moves, best for, worth knowing.",
+  "value": "medium",
+  "notes": "Good decision-support pattern ('X vs Y' table)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Desk Converter Finder",
+  "url": "https://www.ergodirect.com/desk-converter-finder",
+  "category": "interactive_tool",
+  "description": "Questionnaire for sit-stand desktop converters based on existing desk dimensions and equipment; includes long FAQ section on converters.",
+  "mechanics": "Inputs: desk height, depth, width (dropdowns), user height, monitor/laptop setup, budget band, delivery region, monitor make/model, special requirements, contact. Output: emailed recommendations. Page carries SEO FAQ (converter vs desk etc.).",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Mobile Cart Finder",
+  "url": "https://www.ergodirect.com/mobile-cart-finder",
+  "category": "interactive_tool",
+  "description": "Questionnaire for rolling computer carts (healthcare WOW, POS, education, warehouse) with FAQ on powered vs non-powered carts.",
+  "mechanics": "Inputs: user height, number/type of displays, budget, delivery region, device model, special requirements. Output: emailed recommendations.",
+  "value": "low",
+  "notes": "Niche for a home/office store; B2B healthcare focus."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "All Product Finders hub",
+  "url": "https://www.ergodirect.com/pages/product-finder.html",
+  "category": "interactive_tool",
+  "description": "Landing page listing the finders and explaining that real humans (not algorithms) review answers.",
+  "mechanics": "Static cards linking to each finder with a one-line purpose; value proposition bullets (personalized, human-reviewed, practical).",
+  "value": "medium",
+  "notes": "Outdated: says 'our four product finders' while 6 finders exist (desk-converter and desk-finder missing from list)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Workspace Planner / Ergonomic Desk Height Calculator",
+  "url": "https://www.ergodirect.com/resources/workspace-planner",
+  "category": "interactive_tool",
+  "description": "Click-your-height calculator based on BIFMA G1 anthropometric data that shows recommended monitor, keyboard and seat heights for sitting and standing, plus sit-stand travel needed. Suggests matching sit-stand products and offers a printable worksheet.",
+  "mechanics": "Input: user height via buttons 5'0\"-6'4\" (1\" steps). Output: 7 values (e.g., for 5'8\": standing/sitting monitor height, standing/sitting keyboard height, seat height 18\", sit-stand adjustment 18\"), a diagram with 20-30\" viewing distance and 10-20 deg tilt, 'install within an inch' instruction, product suggestions by height, printable worksheet.",
+  "value": "high",
+  "notes": "Height range only 5'0\"-6'4\" (excludes petite/tall users who need it most); no metric; heights hard-coded in data attributes. Easy to beat with a slider, cm/in toggle, shoe allowance, and links to products whose ranges fit."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Ergonomic Evaluation Tool (7-question self-assessment, sitewide)",
+  "url": "https://www.ergodirect.com/resources/workspace-planner",
+  "category": "interactive_tool",
+  "description": "Seven yes/no checklist questions about the user's current workstation, shown on most resource pages. Each 'No' highlights a body area on a figure and shows a corrective tip; results can be sent to ErgoDirect specialists.",
+  "mechanics": "Inputs: yes/no for monitor top at eye level, >=20\" viewing distance, flat wrists, relaxed shoulders, feet flat with 90-120 deg hips, adjustability of monitor/keyboard/chair, standing periodically. Output: per-question fix text (e.g., bifocal monitor guidance), body-diagram highlights (neck/eye/wrist/shoulder/low back), 'See Recommendations', 'Send Results' to staff (lead capture).",
+  "value": "high",
+  "notes": "Simple but effective; Jestik could add scoring, product links per failed item and a downloadable PDF report."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Ergotron Mount Finder (embedded)",
+  "url": "https://www.ergodirect.com/pages/mount-finder.html",
+  "category": "interactive_tool",
+  "description": "Page meant to embed Ergotron's partner mount finder in an iframe.",
+  "mechanics": "iframe to ergotron.com/en-us/partner-finder/ergodirect.",
+  "value": "low",
+  "notes": "Appears broken: the embedded Ergotron URL returned HTTP 403 when fetched; page has no other content. Fixed 800px iframe not mobile friendly."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "3D Chair Configurator ('Build your ... chair in 3D')",
+  "url": "https://www.ergodirect.com/14771-office-master-pt69-paramount-value-small-ergonomic-task-chair.html",
+  "category": "interactive_tool",
+  "description": "Selected Office Master/OM Seating chairs have a 3D build experience where option choices (upholstery, arms, cylinder, etc.) update a rendered chair; product cards are labeled 'Build your X chair in 3D'. Product page also embeds the manufacturer's interactive adjustment demo.",
+  "mechanics": "Inputs: option swatches/selectors per chair. Output: updated 3D/visual preview with progress bar loader, running price, add to cart. Separate iframe from omseating.com shows chair adjustment animations.",
+  "value": "medium",
+  "notes": "Heavy (1MB+ page). Valuable for configurable chairs; costly to build unless supplier provides assets."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Product option/add-on configurator with 'My Selections' summary",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "commerce",
+  "description": "Product pages list required model choice plus optional add-ons (CPU holder, notebook tray, cables, mats, mouse holder) each with 'No thanks', and a summary panel of selections.",
+  "mechanics": "Inputs: per-option click-to-select with quantity variants. Output: 'All Options / My Selections' summary, price update, add to cart.",
+  "value": "high",
+  "notes": "Good model for accessory attach (bundles/add-ons). Some options outdated (VGA/DVI cables)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Seat Height Measurement Guide",
+  "url": "https://www.ergodirect.com/pages/seat-height-measurement.html",
+  "category": "guide_education",
+  "description": "Explains popliteal height, gas cylinder sizes (4/5/6 inch) and how seat-height range relates to cylinder choice, with step-by-step home measuring instructions.",
+  "mechanics": "Static guide + infographic: sit with feet flat, measure floor to just below kneecap; aim for measurement mid-range of the chair's adjustment; suggests footrest if desk forces raised seat.",
+  "value": "high",
+  "notes": "Ideal to convert into an interactive cylinder/seat-height checker."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Seat Width & Depth Measurement Guide",
+  "url": "https://www.ergodirect.com/pages/seat-width-depth-measurement.html",
+  "category": "guide_education",
+  "description": "How to measure seat width (books against hips) and seat depth (buttock-to-knee minus ~2\") to pick a chair that fits.",
+  "mechanics": "Static steps + infographic; explains consequences of too narrow/wide/deep/shallow.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Elbow Height Measurement (armrest)",
+  "url": "https://www.ergodirect.com/pages/elbow-height-measurement.html",
+  "category": "guide_education",
+  "description": "Short image-led guide to measuring elbow height for setting chair armrests.",
+  "mechanics": "One sentence + image instructions; recommends a helper.",
+  "value": "medium",
+  "notes": "Thin content (image only, ~2 sentences)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "ErgoTips",
+  "url": "https://www.ergodirect.com/pages/ergotips.html",
+  "category": "guide_education",
+  "description": "Bullet-point setup tips by component: chair, monitor, keyboard, mouse, desk; each section links to the matching finder or planner.",
+  "mechanics": "Static tips (e.g., arm's-length monitor distance, curved monitor viewing distance from curvature radius, negative keyboard tilt, standard desk height 28-30\", alternate sit/stand every 20-30 min).",
+  "value": "high",
+  "notes": "Cross-links tips to tools - good internal linking pattern."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Installation videos / Cylinder replacement video",
+  "url": "https://www.ergodirect.com/pages/cylinder-replacement-video.html",
+  "category": "guide_education",
+  "description": "Pages embedding a single YouTube video each (chair gas cylinder replacement; general installation).",
+  "mechanics": "YouTube iframe, no transcript or steps.",
+  "value": "medium",
+  "notes": "Very thin pages (title + video). Also /pages/installations.html."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Installation case studies",
+  "url": "https://www.ergodirect.com/pages/installation-sit-stand-workstation.html",
+  "category": "guide_education",
+  "description": "Before/after customer stories (3-monitor sit-stand conversion; L-shaped desk keyboard tray with corner diagonal) describing the problem, chosen products and result.",
+  "mechanics": "Static 'The Need / Solution' narrative with photos and product names.",
+  "value": "medium",
+  "notes": "Only two, old. Also /pages/installation-ergonomic-keyboard-tray-l-shaped-desk.html."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "FAQ / Answered Questions hub (351 Q&As)",
+  "url": "https://www.ergodirect.com/resources/answered-questions",
+  "category": "guide_education",
+  "description": "Large FAQ page grouped into Choosing products, Creating a better workspace, Getting help, 'Where It Hurts?' (neck, shoulders, low back, legs, wrists), Ordering/Shipping/Support, plus aggregated product Q&A by product/brand.",
+  "mechanics": "Static accordion; answers cross-link to finders, planner and measurement guides. Pain-based section maps symptoms to adjustments.",
+  "value": "high",
+  "notes": "Page is ~1.1MB HTML; 'Where It Hurts' symptom navigation is the standout idea."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Blog (Ergonomics 101 & Office Resources)",
+  "url": "https://www.ergodirect.com/blog/",
+  "category": "guide_education",
+  "description": "WordPress blog with ~112 posts: chair choice for petite users, desk too high, sit-stand lowest height, VESA explainer, cylinder choice, keyboard trays, gaming ergonomics, WFH, comparison charts.",
+  "mechanics": "Post list with categories: Ergonomics, Monitor Arm, Work From Home, Thermal Imaging Cart.",
+  "value": "medium",
+  "notes": "Many posts 2018-2020 era; 'thermal imaging cart' category and COVID WFH posts are dated. Strong evergreen petite-user angle."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Office Master arms comparison chart",
+  "url": "https://www.ergodirect.com/pages/office-master-arms.html",
+  "category": "guide_education",
+  "description": "Matrix of armrest models vs chair series showing compatibility.",
+  "mechanics": "Static table: arm model, type, description, X marks per chair series.",
+  "value": "medium",
+  "notes": "Pattern useful as accessory compatibility matrix."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Product downloads tab (spec sheets, drawings, installation PDFs)",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "guide_education",
+  "description": "Product pages include a Downloads tab with manufacturer product sheets, technical drawings and installation guides, plus a Technical Drawing and Specifications tab.",
+  "mechanics": "Linked PDFs under /attachments/doc/... per component.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Product Q&A ('Ask a Question') per product",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "commerce",
+  "description": "FAQ tab on each product where shoppers can ask a question; answered questions are aggregated into the sitewide FAQ.",
+  "mechanics": "Input: question form. Output: staff-answered Q&A shown on product and in /resources/answered-questions.",
+  "value": "high",
+  "notes": "Many products show 'No FAQs available'."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Product reviews with star histogram + Google Customer Reviews",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "commerce",
+  "description": "Native product reviews with 5-to-1 star breakdown and 'Write a review'; site loads Google Customer Reviews script for post-purchase surveys/badge.",
+  "mechanics": "Review form (submit-review), rating histogram; Google platform.js renderGoogleCustomerReviews.",
+  "value": "high",
+  "notes": "Most products have very few reviews (e.g., 1)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Store-level Customer Reviews page",
+  "url": "https://www.ergodirect.com/customer-reviews",
+  "category": "trust_info",
+  "description": "Paginated list of 181 store reviews, many praising named sales reps (chat, tax-exempt help, showroom visit).",
+  "mechanics": "Static paginated list, 25 per page; testimonials also rotate on homepage.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Live chat (SnapEngage)",
+  "url": "https://www.ergodirect.com/",
+  "category": "commerce",
+  "description": "Live chat widget staffed by sales reps; reviews cite chat help with options and orders.",
+  "mechanics": "SnapEngage JS widget, proactive chat disabled.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Wishlist (account-gated)",
+  "url": "https://www.ergodirect.com/wishlist",
+  "category": "commerce",
+  "description": "Save-for-later list tied to customer account; heart icons on product cards.",
+  "mechanics": "Redirects to login when not signed in.",
+  "value": "medium",
+  "notes": "Requires login; guest wishlist would be friendlier."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Corporate discounts / quote requests",
+  "url": "https://www.ergodirect.com/",
+  "category": "commerce",
+  "description": "Robots.txt references corp_discounts.php, /quote/ and /instant_quote/ endpoints, indicating corporate discount and quote workflows; homepage pitches corporate solutions and free consultations.",
+  "mechanics": "Not crawled (disallowed in robots.txt). Homepage: 'Free Consultation', 'Custom Products', corporate office solution tiles.",
+  "value": "high",
+  "notes": "Mechanics not verified (disallowed paths respected)."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Ergo-Stream (corporate ergonomics program for EHS/HR)",
+  "url": "https://www.ergodirect.com/pages/ergo-stream.html",
+  "category": "commerce",
+  "description": "B2B program bundling online workstation evaluations, customized assessment questionnaires, private pre-approved catalog with negotiated prices, account executive, ergonomic lab setup, and per-employee inventory/financial reporting.",
+  "mechanics": "Static description + lead form (requirements free text, name, email, company, phone).",
+  "value": "high",
+  "notes": "Strong model for a Jestik 'Teams/Business' program."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Office Layout & Design services",
+  "url": "https://www.ergodirect.com/pages/office-layout-and-design.html",
+  "category": "commerce",
+  "description": "Lists logistics, space planning, architectural, vendor/project management and furniture services.",
+  "mechanics": "Static text sections.",
+  "value": "low",
+  "notes": "Contains garbled copy ('an error direct fuses our deep expertise') - looks unedited/outdated."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Free shipping messaging on product pages",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "commerce",
+  "description": "Product pages flag FREE SHIPPING (contiguous US) and 'More shipping' detail; ships within US only.",
+  "mechanics": "Badge + shipping note near price.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Free consultation / ergonomist assessment upsell",
+  "url": "https://www.ergodirect.com/chair-finder",
+  "category": "commerce",
+  "description": "Free human recommendation via finders plus optional paid video/email consultation with an independent certified ergonomist ($100/$150).",
+  "mechanics": "Opt-in checkbox in finder forms.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "About Us + showroom",
+  "url": "https://www.ergodirect.com/pages/about-us.html",
+  "category": "trust_info",
+  "description": "Company story (founded 2002), client logos (Google, Apple, Lockheed Martin, government/healthcare/education), list of free online tools, and Silicon Valley showroom to test chairs/desks.",
+  "mechanics": "Static text.",
+  "value": "medium",
+  "notes": "Outdated: still mentions following COVID-19 safety precautions."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Contact page",
+  "url": "https://www.ergodirect.com/help/contact_us.php",
+  "category": "trust_info",
+  "description": "Contact form, phone, email, address, hours (M-F 8-4:30), showroom by appointment.",
+  "mechanics": "Form with captcha.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Return & cancellation policy (per-manufacturer)",
+  "url": "https://www.ergodirect.com/pages/return-policy.html",
+  "category": "trust_info",
+  "description": "24-hour change/cancel window (25% fee after), RMA required, buyer pays return shipping, and a long per-brand list of 30-day conditions and 15-35% restocking fees; many special-order brands non-returnable.",
+  "mechanics": "Static text.",
+  "value": "medium",
+  "notes": "Customer-unfriendly; a simple Jestik policy (e.g., free returns / 30-day trial on stock items) would differentiate."
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "International shipping policy",
+  "url": "https://www.ergodirect.com/pages/international-shipping.html",
+  "category": "trust_info",
+  "description": "US-only except one brand; international orders quoted by email and paid by wire transfer.",
+  "mechanics": "Static text.",
+  "value": "low",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Warranty/Returns tab on product page",
+  "url": "https://www.ergodirect.com/17828-ergodirect-ed-2klxs-dual-monitor-keyboard-sit-stand-workstation.html",
+  "category": "trust_info",
+  "description": "Each product shows warranty term per component (e.g., 5 years) and returns info in a tab.",
+  "mechanics": "Static product tab.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "ergodirect.com",
+  "name": "Terms, Prop 65 notice",
+  "url": "https://www.ergodirect.com/pages/terms-and-conditions.html",
+  "category": "trust_info",
+  "description": "Legal terms and California Prop 65 (DEHP) disclosure page.",
+  "mechanics": "Static text; also /pages/prop-65-dehp.html.",
+  "value": "low",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Request an Ergonomic Evaluation (quote form)",
+  "url": "https://askergoworks.com/pages/request-an-ergonomic-evaluation",
+  "category": "commerce",
+  "description": "Lead form to request a priced quote for virtual or on-site ergonomic evaluation; emphasizes certified specialists and no obligation.",
+  "mechanics": "Shopify Forms embed (contact, needs). Output: team contacts with pricing by evaluation type, location, number of workstations.",
+  "value": "medium",
+  "notes": "Service business; Jestik could offer a lighter virtual setup check instead."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Ergonomic consulting / evaluation tiers",
+  "url": "https://askergoworks.com/pages/ergonomic-evaluations-assessements",
+  "category": "commerce",
+  "description": "Detailed service page: on-site and virtual workstation evaluations, workshops, workstation design, chair fittings, with what's included, process steps, industries, cities served, and FAQ.",
+  "mechanics": "Static content with CTAs; three evaluation levels on /pages/services (Preventative 30-45 min, Standard 1.5-2 h, Comprehensive 2-3 h) and remote evaluation flow (questionnaire + photos -> 30-min call -> PDF report).",
+  "value": "medium",
+  "notes": "Duplicate page at /pages/ergonomics-consulting. Good model for a 'Virtual Setup Review' product."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Virtual/remote workstation evaluation",
+  "url": "https://askergoworks.com/pages/services",
+  "category": "commerce",
+  "description": "Remote evaluation where the employee submits a questionnaire and photos, gets a 30-minute coaching call and a PDF corrective-action report.",
+  "mechanics": "Inputs: questionnaire + photos of workstation/body positions; Output: call + PDF report + product recommendations.",
+  "value": "high",
+  "notes": "Jestik could offer a photo-upload setup review (free with purchase)."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Custom chair fittings (in-person & virtual)",
+  "url": "https://askergoworks.com/pages/your-ergonomics-partner",
+  "category": "commerce",
+  "description": "By-appointment chair fitting assessing body dimensions and habits to recommend and configure chairs; downloadable chair measuring form.",
+  "mechanics": "Appointment by phone; PDF 'Chair Fitting Form' (CUSTOMFIT measuring form).",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "On-site installation services",
+  "url": "https://askergoworks.com/pages/on-site-installation",
+  "category": "commerce",
+  "description": "Office panel installation, furniture assembly, ergonomic equipment setup and workstation retrofitting (Bay Area).",
+  "mechanics": "Static sections with CTA buttons.",
+  "value": "low",
+  "notes": "Local service. Copy-paste errors on /pages/your-ergonomics-partner (wrong subheadings under Workshop and Panel Installation)."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Corporate purchasing program + Net-30 credit application",
+  "url": "https://askergoworks.com/pages/for-corporations",
+  "category": "commerce",
+  "description": "Corporate program offering account management, priority service, extended returns, custom corporate pricing site/price list of pre-approved products, volume discounts and Net-30 credit terms.",
+  "mechanics": "Form: name, title, company, address, # employees, products/services of interest, comments; PDF credit application; 'Online Credit Application' section.",
+  "value": "high",
+  "notes": "Content block duplicated twice on the page."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Volume pricing / Request a Quote on product pages",
+  "url": "https://askergoworks.com/products/fundamentals-ex-electric-sit-stand-table",
+  "category": "commerce",
+  "description": "Product pages include 'Request a Quote' and per-product FAQ stating B2B/institutional purchasing with volume pricing, net terms and procurement docs for corporate, healthcare, government and education.",
+  "mechanics": "CTA link + FAQ accordion.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Per-product FAQ accordion",
+  "url": "https://askergoworks.com/products/fundamentals-ex-electric-sit-stand-table",
+  "category": "guide_education",
+  "description": "Product-specific Q&A (lead time, comparisons with sibling models, assessment help, B2B buying).",
+  "mechanics": "Static accordion in product description.",
+  "value": "high",
+  "notes": "Inconsistent: product FAQ says 'Free shipping on all orders' while shipping page says $99 minimum and quotes for tables/chairs."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Frequently Bought Together bundles",
+  "url": "https://askergoworks.com/products/fundamentals-ex-electric-sit-stand-table",
+  "category": "commerce",
+  "description": "Bundle widget 'Complete the set for extra savings' letting shoppers add selected companion items with a bundle discount.",
+  "mechanics": "App widget (combo template): checkboxes, total, 'You save' amount, add selected to cart.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Product reviews (TrustShop; Okendo/Yotpo remnants) + store reviews",
+  "url": "https://askergoworks.com/products/fundamentals-ex-electric-sit-stand-table",
+  "category": "commerce",
+  "description": "Product and store reviews via a review app with email capture for rewards/discounts; theme code still references Okendo and Yotpo.",
+  "mechanics": "Review modal (title, body, email), one store review per customer.",
+  "value": "high",
+  "notes": "Leftover code from multiple review apps."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Cart rewards progress bar / free-shipping threshold",
+  "url": "https://askergoworks.com/",
+  "category": "commerce",
+  "description": "Cart shows progress toward unlockable rewards ('$X away from reward', auto-applied at checkout) and site banner: free shipping over $99.",
+  "mechanics": "Tiered cart incentive widget; announcement bar.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Promo announcement bar with copyable code",
+  "url": "https://askergoworks.com/",
+  "category": "commerce",
+  "description": "Time-limited brand promotion (e.g., 20% off a chair brand with code and end date) in the announcement bar and a homepage section with 'Copy code' button.",
+  "mechanics": "Static banner + copy-to-clipboard button.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Newsletter popup (5% off first order) via Klaviyo/Shopify Forms",
+  "url": "https://askergoworks.com/",
+  "category": "commerce",
+  "description": "Email/SMS capture popup offering 5% off the first order.",
+  "mechanics": "Shopify Forms popup; Klaviyo scripts present.",
+  "value": "medium",
+  "notes": "Theme contains a long Spanish-language HTML comment documenting an accessibility patch that previously made product pages non-interactive (inert) - sign of fragile customizations."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Shop Pay Installments financing",
+  "url": "https://askergoworks.com/products/fundamentals-ex-electric-sit-stand-table",
+  "category": "commerce",
+  "description": "Pay-over-time financing offered on eligible orders ($35-$30,000) at checkout/product page.",
+  "mechanics": "Shopify financing_plans config, Shop Pay.",
+  "value": "high",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Product compare + quick view + faceted filters",
+  "url": "https://askergoworks.com/collections/all",
+  "category": "commerce",
+  "description": "Collection pages support filtering by category, vendor, availability, price; quick view modal; compare feature in theme.",
+  "mechanics": "Shopify Search & Discovery filters (filter.p.vendor, filter.v.availability, price range), quick view, compare checkbox.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Lead time / stock messaging",
+  "url": "https://askergoworks.com/pages/shipping-warranty-returns",
+  "category": "commerce",
+  "description": "States in-stock items ship within 24-48 hours and special-order chairs/tables have 2-5 week lead times.",
+  "mechanics": "Static policy text + product FAQ.",
+  "value": "high",
+  "notes": "Not shown dynamically per product."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Agent/AI commerce endpoints (agents.md, UCP)",
+  "url": "https://askergoworks.com/agents.md",
+  "category": "commerce",
+  "description": "Published instructions for AI shopping agents describing Universal Commerce Protocol discovery and MCP endpoint for search/cart/checkout.",
+  "mechanics": "Markdown file listed in sitemap_agentic_discovery.xml; /.well-known/ucp.",
+  "value": "low",
+  "notes": "Shopify platform default; Jestik likely already has it."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Product FAQ page (sizing guidance)",
+  "url": "https://askergoworks.com/pages/faq",
+  "category": "guide_education",
+  "description": "Long FAQ on keyboard trays/platforms, mounting spacers, mouse vs trackball (with hand-length size chart), mouse bridge, headsets, document holders, anti-glare filter sizing, split keyboards, chair selection, adjustable tables.",
+  "mechanics": "Static Q&A. Includes formulas such as spacer size = track length x overhang and mouse size by middle-finger-to-wrist-crease length.",
+  "value": "medium",
+  "notes": "Outdated references (900 MHz cordless headsets, Microsoft Natural Elite). /pages/avada-faqs is an empty 'Loading...' page."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Blog (long-form ergonomic guides)",
+  "url": "https://askergoworks.com/blogs/posts",
+  "category": "guide_education",
+  "description": "~115 articles incl. pillar guides (home office, chairs, keyboards & mice, injury prevention, posture), audience guides (gamers, students, travelers, petite users, inclusive ergonomics, by industry) and head-to-head product comparisons.",
+  "mechanics": "Shopify blog; homepage shows latest 6.",
+  "value": "high",
+  "notes": "Comparison posts (X vs Y) and petite-user posts are strong SEO patterns."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Downloadable resources (PDFs)",
+  "url": "https://askergoworks.com/",
+  "category": "guide_education",
+  "description": "Footer links to Ergonomic Workout stretch PDF, Workstation Reminder Card (image), Chair Fitting Form, Ergonomic Evaluation Intake Form, company brochure and Products & Services Line Card.",
+  "mechanics": "Direct links to cdn.shopify.com files.",
+  "value": "high",
+  "notes": "Workout page /pages/ergonomic-workout is just a download link; brochure dated 2023."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Products & Services line card",
+  "url": "https://askergoworks.com/pages/ergonomics-products-services",
+  "category": "trust_info",
+  "description": "One-page capability statement listing product categories, services, manufacturers, client names, NAICS and SIC codes for procurement.",
+  "mechanics": "Static page + downloadable poster.",
+  "value": "medium",
+  "notes": "Useful for government/corporate buyers. Typo 'Manufactuers'."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "About Us team bios",
+  "url": "https://askergoworks.com/pages/about-us",
+  "category": "trust_info",
+  "description": "Team page with photos, credentials (architecture degrees, OT/CEAS ergonomist), roles and bios; 'hover for fun facts'.",
+  "mechanics": "Static grid with hover reveals.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Testimonials (B2B clients)",
+  "url": "https://askergoworks.com/pages/testimonials",
+  "category": "trust_info",
+  "description": "Named testimonials from EHS and workplace managers at biotech/pharma and other firms.",
+  "mechanics": "Static quotes.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Certifications: WBE, CA DGS Small Business, SAM.gov, Ariba",
+  "url": "https://askergoworks.com/pages/woman-owned-business",
+  "category": "trust_info",
+  "description": "Footer badges linking to Women Business Enterprise page, CA small-business certificate PDF, SAM.gov registration PDF and Ariba supplier profile.",
+  "mechanics": "Badge links to PDFs/external profiles.",
+  "value": "medium",
+  "notes": "/pages/woman-owned-business renders only a heading (empty page)."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Shipping, Warranty & Returns page",
+  "url": "https://askergoworks.com/pages/shipping-warranty-returns",
+  "category": "trust_info",
+  "description": "Ship within 24-48h from Palo Alto, 5-7 business-day delivery, $15 under $99 / free over $99, quotes for tables/chairs/AK/HI, manufacturer-only warranty, 30-day returns with buyer-paid shipping; custom chairs final sale.",
+  "mechanics": "Static text.",
+  "value": "medium",
+  "notes": "Outdated wording (mentions diskettes). /policies/shipping-policy is empty."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Refund policy",
+  "url": "https://askergoworks.com/policies/refund-policy",
+  "category": "trust_info",
+  "description": "30 days from invoice, like-new condition, original box, buyer pays return freight; custom chairs/tables final sale.",
+  "mechanics": "Static Shopify policy.",
+  "value": "low",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Contact + showroom by appointment",
+  "url": "https://askergoworks.com/pages/contact-us",
+  "category": "trust_info",
+  "description": "Contact form, toll-free and local phone, email, address, showroom open by appointment M-F 9-5.",
+  "mechanics": "Shopify contact form.",
+  "value": "medium",
+  "notes": ""
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "Local SEO landing page (Bay Area evaluations)",
+  "url": "https://askergoworks.com/pages/bay-area-ergonomic-evaluations",
+  "category": "trust_info",
+  "description": "City-targeted landing page listing Bay Area cities served, services and FAQ.",
+  "mechanics": "Static content.",
+  "value": "low",
+  "notes": "Also a public 'staging' page /pages/ergonomic-evaluations-staging indexed in sitemap."
+ },
+ {
+  "site": "askergoworks.com",
+  "name": "'As Featured On' press + client logos",
+  "url": "https://askergoworks.com/",
+  "category": "trust_info",
+  "description": "Homepage trust strip with press logos (links to a 2008 SF Business Times article) and 'Trusted by' client logos; '30 years of expertise' claims.",
+  "mechanics": "Static logo rows.",
+  "value": "medium",
+  "notes": "Press link is from 2008."
+ }
+]
