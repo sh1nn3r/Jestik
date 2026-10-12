@@ -58,7 +58,7 @@ export function createDataForSeoSource(cfg, { login, password, fetchImpl = fetch
     name: 'Google Shopping (DataForSEO)',
 
     async prepare(catalog) {
-      const keywords = [...new Set(catalog.filter(p => p.reference).map(keywordFor))];
+      const keywords = [...new Set(catalog.filter(p => p.reference && p.price > 0).map(keywordFor))];
       for (let i = 0; i < keywords.length; i += BATCH) {
         const tasks = keywords.slice(i, i + BATCH).map(keyword => ({
           keyword,

@@ -52,9 +52,13 @@ column says what to do:
 
 ## Setup
 
-1. **Shopify access:** in Shopify admin, go to *Settings → Apps → Develop apps*,
-   create an app with the `read_products` and `read_inventory` scopes, and
-   copy its Admin API token.
+1. **Our catalog:** with no setup, the tool reads chronocandy.com's public
+   catalog. Watches priced at $0 (price on request) are skipped. For the
+   cost-based price floor, optionally give it Shopify access: in Shopify admin,
+   go to *Settings → Apps → Develop apps*, create an app with the
+   `read_products` and `read_inventory` scopes, and add its token as
+   `SHOPIFY_ADMIN_TOKEN` (plus `SHOPIFY_STORE`). Without a token, the only floor
+   is `maxDropPct`.
 2. **Competitors:** add each one to `sources` in `config.json`:
    ```json
    { "id": "the-competitor", "type": "shopify-store", "name": "The Competitor", "domain": "thecompetitor.com" }
@@ -64,8 +68,9 @@ column says what to do:
 3. **Google Shopping (optional):** create a DataForSEO account and set
    `"enabled": true` on the `google-shopping` source.
 4. **Weekly schedule:** in GitHub, go to *Settings → Secrets and variables → Actions*
-   and add the secrets `SHOPIFY_STORE` (e.g. `yourstore.myshopify.com`),
-   `SHOPIFY_ADMIN_TOKEN`, and if used `DATAFORSEO_LOGIN` / `DATAFORSEO_PASSWORD`.
+   and add the secrets you use: `SHOPIFY_STORE` / `SHOPIFY_ADMIN_TOKEN` (optional)
+   and `DATAFORSEO_LOGIN` / `DATAFORSEO_PASSWORD` (if Google Shopping is on).
+   Until a competitor is enabled in `config.json`, the weekly run does nothing.
    The report runs every Monday. Download it from the run's page under
    *Actions → Weekly price match report*. Use *Run workflow* to run it on demand.
 
@@ -73,8 +78,8 @@ column says what to do:
 
 ```bash
 cd price-match
-export SHOPIFY_STORE=yourstore.myshopify.com SHOPIFY_ADMIN_TOKEN=...
-node src/cli.js --limit 20                # try a few watches first
+node src/cli.js --limit 20                # try a few watches first (reads chronocandy.com)
+node src/cli.js --storefront              # force the public catalog even if a token is set
 node src/cli.js --sku "278384RBR dkgio"   # one watch
 node src/cli.js --catalog products.json   # use an exported catalog instead of the API
 npm test

@@ -24,8 +24,12 @@ export async function runPriceMatch({ catalog, sources, pricing, ownDomains = []
   let i = 0;
   for (const product of catalog) {
     i++;
-    if (!product.reference || !Number.isFinite(product.price)) {
-      results.push({ product, action: 'skipped', note: 'no reference number or price', offers: [], rejected: [] });
+    if (!product.reference) {
+      results.push({ product, action: 'skipped', note: 'no reference number', offers: [], rejected: [] });
+      continue;
+    }
+    if (!(product.price > 0)) {
+      results.push({ product, action: 'skipped', note: 'no price (price on request)', offers: [], rejected: [] });
       continue;
     }
 

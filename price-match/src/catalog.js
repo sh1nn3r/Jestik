@@ -81,3 +81,21 @@ export async function loadCatalogFromFile(path, { storefrontDomain } = {}) {
   const products = Array.isArray(raw) ? raw : raw.products;
   return products.flatMap(p => toCatalogItems(p, storefrontDomain));
 }
+
+/**
+ * Reads our catalog from the public storefront (/products.json), the same
+ * way competitors are read. Needs no API token, but has no cost data, so
+ * the cost-based price floor does not apply.
+ */
+export async function loadCatalogFromStorefront(domain, { fetchImpl = fetch, delayMs = 1000, limit } = {}) {
+  const items = [];
+  for (let page = 1; page <= 200; page++) {
+    const res = await fetchImpl(`https://${domain}/products.json?limit=250&page=${page}`);
+    if (!res.ok) throw new Error(`${domain}: ${res.status} reading storefront catalog`);
+    const { products = [] } = await res.json();
+    for (const p of products) items.push(...toCatalogItems(p, domain));
+    if (products.length < 250 || (limit && items.length >= limit)) break;
+    await new Promise(r => setTimeout(r, delayMs));
+  }
+  return limit ? items.slice(0, limit) : items;
+}

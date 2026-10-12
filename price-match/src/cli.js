@@ -2,7 +2,7 @@
 /**
  * Weekly price-match report.
  *
- *   node src/cli.js [--config config.json] [--catalog products.json]
+ *   node src/cli.js [--config config.json] [--catalog products.json | --storefront]
  *                   [--limit N] [--sku "278384RBR dkgio"] [--out reports]
  *
  * Reads our catalog, checks the competitor sources enabled in the config, and
@@ -10,7 +10,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
-import { loadCatalogFromFile, loadCatalogFromShopify } from './catalog.js';
+import { loadCatalogFromFile, loadCatalogFromShopify, loadCatalogFromStorefront } from './catalog.js';
 import { runPriceMatch } from './run.js';
 import { summarize, writeReport } from './report.js';
 import { createShopifyStoreSource } from './sources/shopify-store.js';
@@ -39,7 +39,6 @@ function buildSources(config, env) {
         throw new Error(`Unknown source type "${cfg.type}" for ${cfg.id}`);
     }
   }
-  if (!sources.length) throw new Error('No sources enabled. Turn some on in the config file.');
   return sources;
 }
 
@@ -48,6 +47,7 @@ async function main() {
     options: {
       config: { type: 'string', default: 'config.json' },
       catalog: { type: 'string' },
+      storefront: { type: 'boolean', default: false },
       limit: { type: 'string' },
       sku: { type: 'string' },
       out: { type: 'string', default: 'reports' }
@@ -59,16 +59,27 @@ async function main() {
   const storefrontDomain = env.STOREFRONT_DOMAIN || config.ownDomains?.[0];
   const limit = args.limit ? Number(args.limit) : undefined;
 
-  let catalog = args.catalog
-    ? await loadCatalogFromFile(args.catalog, { storefrontDomain })
-    : await loadCatalogFromShopify({
-        shop: env.SHOPIFY_STORE, token: env.SHOPIFY_ADMIN_TOKEN, storefrontDomain, limit
-      });
+  const sources = buildSources(config, env);
+  if (!sources.length) {
+    log('No competitor sources are enabled in the config yet, so there is nothing to compare. Add some and run again.');
+    return;
+  }
+
+  let catalog;
+  if (args.catalog) {
+    catalog = await loadCatalogFromFile(args.catalog, { storefrontDomain });
+  } else if (args.storefront || !env.SHOPIFY_ADMIN_TOKEN) {
+    log(`reading our catalog from https://${storefrontDomain} (no cost data; floor uses maxDropPct only)`);
+    catalog = await loadCatalogFromStorefront(storefrontDomain, { limit });
+  } else {
+    catalog = await loadCatalogFromShopify({
+      shop: env.SHOPIFY_STORE, token: env.SHOPIFY_ADMIN_TOKEN, storefrontDomain, limit
+    });
+  }
   if (args.sku) catalog = catalog.filter(p => p.sku === args.sku);
   if (limit) catalog = catalog.slice(0, limit);
   log(`catalog: ${catalog.length} items`);
 
-  const sources = buildSources(config, env);
   const results = await runPriceMatch({
     catalog, sources, pricing: config.pricing, ownDomains: config.ownDomains || [], log
   });

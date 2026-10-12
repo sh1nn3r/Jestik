@@ -58,3 +58,11 @@ test('DataForSEO installment prices are converted to full price', () => {
   assert.equal(listings.length, 1);
   assert.equal(listings[0].price, 24000);
 });
+
+test('price-on-request watches ($0) are skipped, not compared', async () => {
+  const catalog = toCatalogItems({ ...ourProduct, variants: [{ id: 'v', sku: '278384RBR dkgio', price: '0.00' }] }, null);
+  const never = { id: 'n', search: async () => { throw new Error('should not be called'); } };
+  const [r] = await runPriceMatch({ catalog, sources: [never], pricing: {} });
+  assert.equal(r.action, 'skipped');
+  assert.match(r.note, /price on request/);
+});

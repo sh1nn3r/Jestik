@@ -31,12 +31,7 @@ jobs:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: |
-          if [ -z "$SHOPIFY_ADMIN_TOKEN" ]; then
-            echo "::notice::Price match is not set up yet (no SHOPIFY_ADMIN_TOKEN secret). See price-match/README.md."
-            exit 0
-          fi
-          node src/cli.js ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
+        run: node src/cli.js ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
       - uses: actions/upload-artifact@v4
         with:
           if-no-files-found: ignore
