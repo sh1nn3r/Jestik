@@ -1,0 +1,111 @@
+{%- comment -%}
+  Floating contact button + slide-out panel.
+  Rendered once from snippets/custom-code-body.liquid, just before </body>.
+{%- endcomment -%}
+{%- liquid
+  assign cc_text_display = '(310) 363-0481'
+  assign cc_text_number = '+13103630481'
+  assign cc_appt_email = 'chris@chronocandy.com'
+-%}
+<style>
+  /* Uses the storefront's own tokens from assets/cc.css (--cc-*), with fallbacks. */
+  .cc-contact-fab{position:fixed;right:20px;bottom:20px;z-index:89;width:52px;height:52px;border-radius:50%;border:0;background:var(--cc-primary,#163226);color:var(--cc-on-primary,#f8fafc);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(20,30,40,.18);transition:background-color .15s,transform .15s}
+  .cc-contact-fab:hover{background:var(--cc-primary-hover,#2a4639);transform:translateY(-1px)}
+  .cc-contact-fab svg{width:22px;height:22px}
+  .cc-contact-fab:focus-visible,.cc-contact a:focus-visible,.cc-contact__close:focus-visible{outline:2px solid var(--cc-primary,#163226);outline-offset:2px}
+  .cc-contact-overlay{position:fixed;inset:0;z-index:90;background:rgba(22,37,31,.3);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .cc-contact{position:fixed;top:0;right:0;bottom:0;z-index:91;width:min(420px,100vw);background:var(--cc-bg,#fdfeff);color:var(--cc-fg,#16251f);transform:translateX(102%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s;display:flex;flex-direction:column;font-family:var(--cc-font,'DM Sans',sans-serif);line-height:1.5}
+  .cc-contact *{box-sizing:border-box}
+  .cc-contact-open .cc-contact{transform:none;visibility:visible;transition:transform .3s ease;box-shadow:var(--cc-shadow-dialog,0 20px 80px rgba(20,30,40,.2))}
+  .cc-contact-open .cc-contact-overlay{opacity:1;pointer-events:auto}
+  .cc-contact__head{display:flex;align-items:center;justify-content:space-between;padding:20px 25px;border-bottom:1px solid var(--cc-border,#dee2e5)}
+  .cc-contact__brand{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .cc-contact__close{width:36px;height:36px;border-radius:6px;border:1px solid var(--cc-input,#e2e8f0);background:var(--cc-bg,#fdfeff);color:var(--cc-fg,#16251f);cursor:pointer;display:grid;place-items:center;padding:0;min-height:0}
+  .cc-contact__close:hover{background:var(--cc-accent,#e1efe7)}
+  .cc-contact__close svg{width:16px;height:16px}
+  .cc-contact__body{padding:32px 25px;overflow-y:auto;flex:1}
+  .cc-contact__eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cc-muted,#606a74);margin:0 0 14px}
+  .cc-contact__title{font-family:inherit;font-size:30px;line-height:1.2;font-weight:500;margin:0 0 12px;color:var(--cc-fg,#16251f);letter-spacing:0;text-align:left}
+  .cc-contact__lead{font-size:15px;color:var(--cc-muted,#606a74);margin:0 0 28px}
+  .cc-contact__card{display:flex;align-items:center;gap:16px;padding:18px;border-radius:6px;text-decoration:none!important;margin-bottom:12px;border:1px solid var(--cc-border,#dee2e5);background:var(--cc-bg,#fdfeff);color:var(--cc-fg,#16251f)!important;font-weight:400!important;transition:background-color .15s,border-color .15s}
+  .cc-contact__card:hover{background:var(--cc-accent,#e1efe7)}
+  .cc-contact__card--primary{background:var(--cc-primary,#163226);border-color:var(--cc-primary,#163226);color:var(--cc-on-primary,#f8fafc)!important}
+  .cc-contact__card--primary:hover{background:var(--cc-primary-hover,#2a4639)}
+  .cc-contact__icon{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--cc-accent,#e1efe7);color:var(--cc-primary,#163226)}
+  .cc-contact__card--primary .cc-contact__icon{background:rgba(248,250,252,.12);color:var(--cc-on-primary,#f8fafc)}
+  .cc-contact__icon svg{width:18px;height:18px}
+  .cc-contact__label{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cc-muted,#606a74);margin-bottom:4px}
+  .cc-contact__card--primary .cc-contact__label{color:rgba(248,250,252,.7)}
+  .cc-contact__value{display:block;font-size:18px;font-weight:500}
+  .cc-contact__hint{display:block;font-size:13px;color:var(--cc-muted,#606a74);margin-top:2px}
+  .cc-contact__card--primary .cc-contact__hint{color:rgba(248,250,252,.7)}
+  .cc-contact__arrow{margin-left:auto;width:16px;height:16px;opacity:.6;flex:none}
+  .cc-contact__foot{padding:16px 25px;border-top:1px solid var(--cc-border,#dee2e5);font-size:12px;color:var(--cc-muted,#606a74);letter-spacing:.02em}
+  @media (max-width:600px){.cc-contact-fab{right:14px;bottom:14px;width:48px;height:48px}.cc-contact__body{padding:26px 20px}.cc-contact__head,.cc-contact__foot{padding-inline:20px}.cc-contact__title{font-size:26px}}
+  @media (prefers-reduced-motion:reduce){.cc-contact,.cc-contact-overlay,.cc-contact-fab{transition:none}}
+</style>
+
+<button type="button" class="cc-contact-fab" aria-haspopup="dialog" aria-controls="cc-contact" aria-label="Contact {{ shop.name }}" data-cc-contact-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></button>
+<div class="cc-contact-overlay" data-cc-contact-close></div>
+<aside id="cc-contact" class="cc-contact" role="dialog" aria-modal="true" aria-labelledby="cc-contact-title" aria-hidden="true" tabindex="-1">
+  <div class="cc-contact__head">
+    <span class="cc-contact__brand">{{ shop.name }}</span>
+    <button type="button" class="cc-contact__close" aria-label="Close" data-cc-contact-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="cc-contact__body">
+    <p class="cc-contact__eyebrow">Concierge</p>
+    <h2 id="cc-contact-title" class="cc-contact__title">Questions about a watch?</h2>
+    <p class="cc-contact__lead">Text us a photo, a model number, or a question and we'll get back to you.</p>
+
+    <a class="cc-contact__card cc-contact__card--primary" href="sms:{{ cc_text_number }}">
+      <span class="cc-contact__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+      </span>
+      <span>
+        <span class="cc-contact__label">Fastest reply</span>
+        <span class="cc-contact__value">Text {{ cc_text_display }}</span>
+        <span class="cc-contact__hint">Send a photo, model number, or question</span>
+      </span>
+      <svg class="cc-contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="cc-contact__card cc-contact__card--plain" href="mailto:{{ cc_appt_email }}?subject={{ 'Appointment request' | url_encode }}">
+      <span class="cc-contact__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+      </span>
+      <span>
+        <span class="cc-contact__label">Book an appointment</span>
+        <span class="cc-contact__value">Email us</span>
+        <span class="cc-contact__hint">{{ cc_appt_email }}</span>
+      </span>
+      <svg class="cc-contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="cc-contact__foot">Los Angeles</div>
+</aside>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var panel = document.getElementById('cc-contact');
+    var opener = document.querySelector('[data-cc-contact-open]');
+    if (!panel || !opener) return;
+    function open() {
+      root.classList.add('cc-contact-open');
+      panel.setAttribute('aria-hidden', 'false');
+      opener.setAttribute('aria-expanded', 'true');
+      panel.focus();
+    }
+    function close() {
+      root.classList.remove('cc-contact-open');
+      panel.setAttribute('aria-hidden', 'true');
+      opener.setAttribute('aria-expanded', 'false');
+      opener.focus();
+    }
+    opener.addEventListener('click', open);
+    document.querySelectorAll('[data-cc-contact-close]').forEach(function (el) { el.addEventListener('click', close); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && root.classList.contains('cc-contact-open')) close();
+    });
+  })();
+</script>

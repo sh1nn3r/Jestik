@@ -1,0 +1,40 @@
+name: Weekly price match report
+
+on:
+  schedule:
+    # Mondays at 13:47 UTC (early morning US Pacific)
+    - cron: '47 13 * * 1'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Only check the first N watches (blank = all)'
+        required: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    defaults:
+      run:
+        working-directory: price-match
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Build report
+        env:
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+          STOREFRONT_DOMAIN: ${{ vars.STOREFRONT_DOMAIN }}
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: node src/cli.js ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: ignore
+          name: price-match-report
+          path: price-match/reports/price-match-*
+          retention-days: 90

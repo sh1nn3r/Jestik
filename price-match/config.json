@@ -1,0 +1,51 @@
+{
+  "ownDomains": [
+    "chronocandy.com"
+  ],
+  "ourCondition": null,
+  "pricing": {
+    "undercut": 0,
+    "minMarginPct": 8,
+    "maxDropPct": 5,
+    "ignoreBelowPct": 60,
+    "roundTo": 1,
+    "minConfidence": "high"
+  },
+  "sources": [
+    {
+      "id": "watchguynyc",
+      "type": "shopify-store",
+      "name": "WatchGuyNYC",
+      "domain": "www.watchguynyc.com"
+    },
+    {
+      "id": "watchguys",
+      "type": "shopify-store",
+      "name": "WatchGuys",
+      "domain": "www.watchguys.com"
+    },
+    {
+      "id": "watches-off-5th",
+      "type": "shopify-store",
+      "name": "Watches Off 5th",
+      "domain": "www.watchesoff5th.com"
+    },
+    {
+      "id": "exquisite-timepieces",
+      "type": "shopify-store",
+      "name": "Exquisite Timepieces",
+      "domain": "www.exquisitetimepieces.com"
+    },
+    {
+      "id": "google-shopping",
+      "type": "dataforseo",
+      "enabled": false
+    },
+    {
+      "id": "google-shopping-serpapi",
+      "type": "serpapi",
+      "engine": "google_shopping",
+      "enabled": false
+    }
+  ]
+}
