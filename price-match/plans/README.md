@@ -35,3 +35,5 @@ approved. The UNDO file sets them back to $0 (price on request).
 `2026-10-13-raise-prices-*.csv`: 115 watches priced at least 5% below every competitor; proposed price is $50 under the cheapest competitor. Not yet approved.
 
 Applied 2026-10-13 via the Shopify connector: all 115 raise-prices changes succeeded. Restore with `2026-10-13-raise-prices-UNDO.csv` (Products → Import, overwrite).
+
+`2026-10-13-match548-*`: owner approved matching all 548 watches where WatchGuys or WatchGuyNYC sells the exact same watch cheaper; new price is $50 under the cheaper of the two. Applied via the Shopify connector. UNDO restores prior prices.
