@@ -40,3 +40,5 @@ Applied 2026-10-13 via the Shopify connector: all 115 raise-prices changes succe
 
 `2026-10-13-matchreview-*`: owner said "match them" for the check-by-eye watches (competitor listing did not confirm dial or condition); priced $50 under that competitor. UNDO restores prior prices.
 Applied 2026-10-13 via the Shopify connector: all 475 succeeded ($13.1M total cuts; owner chose to include the 155 watches over $100K).
+
+2026-10-13: Patek 5990/1R-001: owner has one unworn and one pre-owned. Unworn listing (patek-philippe-nautilus-self-winding-travel-time-chronograph-...-5990-1r-001) raised 338541.50 -> 349429 ($50 under WatchGuyNYC unworn). Pre-owned listing (patek-philippe-nautilus-40-5-mm-flyback-...-5990-1r-001) kept at 319945; stray "Unworn" tag removed.
