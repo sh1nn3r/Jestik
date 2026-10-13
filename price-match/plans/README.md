@@ -23,3 +23,9 @@ before it was made. Import with "Overwrite products with matching handles".
 Only Handle, Title, option columns (filled with current values), SKU and
 price are included, so nothing else on the listings changes.
 `2026-10-13-safe-cuts-UNDO-shopify-import.csv` restores the old prices.
+
+`2026-10-13-on-request-pricing-*.csv`: prices for 103 "price on request"
+watches that have a confirmed match (treated as unworn, since these are
+"available to order"). Owner's rule: be second-cheapest. Every one has only
+one competitor seller, so the price is $50 above that seller. Not yet
+approved. The UNDO file sets them back to $0 (price on request).
