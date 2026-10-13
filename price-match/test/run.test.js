@@ -66,3 +66,10 @@ test('price-on-request watches ($0) are skipped, not compared', async () => {
   assert.equal(r.action, 'skipped');
   assert.match(r.note, /price on request/);
 });
+
+test('our own store is ignored when Google names it as a seller', async () => {
+  const catalog = toCatalogItems(ourProduct, 'chronocandy.com');
+  const google = { id: 'g', search: async () => [{ source: 'Chrono Candy (via google_shopping)', title: 'Rolex 278384RBR dkgio Grey Index Dial unworn', price: 15000 }] };
+  const [r] = await runPriceMatch({ catalog, sources: [google], pricing: {}, ownDomains: ['chronocandy.com'] });
+  assert.equal(r.offers.length, 0);
+});

@@ -109,3 +109,15 @@ test('a plain-dial listing is only a medium match for our diamond dial', () => {
   assert.equal(r.match, true);
   assert.equal(r.confidence, 'medium');
 });
+
+test('supplier version codes: same code confirms the dial, a different code is a different watch', () => {
+  const lady = { reference: '279178', dialCode: 'chij', condition: null, title: 'Rolex Yellow Gold Lady-Datejust 28 Watch - Fluted Bezel - Champagne Index Dial - Jubilee Bracelet - 279178 chij' };
+  const same = compare(lady, { title: 'Rolex Lady Datejust 28mm Watch: 279178 chij' });
+  assert.equal(same.match, true);
+  assert.ok(same.reasons.includes('exact version code'));
+  const other = compare(lady, { title: 'Rolex Lady Datejust 28mm Watch: 279178 srj' });
+  assert.equal(other.match, false);
+  assert.match(other.reasons[0], /version code differs/);
+  // A capitalized word after the reference is not a code.
+  assert.equal(compare(lady, { title: 'Rolex 279178 Datejust 28 Champagne Index Dial Jubilee' }).match, true);
+});

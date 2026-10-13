@@ -93,6 +93,19 @@ export function containsRef(text, ref) {
   return re.test(String(text || ''));
 }
 
+/**
+ * The lowercase supplier code right after the reference, if any
+ * ("Rolex Lady Datejust 28mm Watch: 279178 chij" -> "chij"). Capitalized
+ * words after the reference ("126334 Datejust") are not codes.
+ */
+export function versionCode(text, ref) {
+  if (!ref) return null;
+  const re = new RegExp(`(?<![A-Za-z0-9])${normalizeRef(ref).split('').join('[\\s.\\-/]?')}[\\s:-]+([a-z0-9]{1,12})(?![A-Za-z0-9])`, 'i');
+  const m = String(text || '').match(re);
+  if (!m || m[1] !== m[1].toLowerCase() || !/[a-z]/.test(m[1])) return null;
+  return m[1];
+}
+
 export function detectBrand(text) {
   const t = String(text || '').toLowerCase();
   return BRANDS.find(b => t.includes(b.toLowerCase())) || null;
@@ -205,21 +218,31 @@ export function compare(ours, listing) {
     return { match: false, confidence: null, reasons: ['reference not found'] };
   }
 
+  // Some sellers list the same supplier codes we use ("279178 chij"): the
+  // code after the reference names the exact dial/bracelet version.
+  const theirCode = versionCode(listing.title, ours.reference);
+  if (ours.dialCode && theirCode) {
+    if (theirCode !== ours.dialCode.toLowerCase()) {
+      return { match: false, confidence: null, reasons: [`version code differs (ours: ${ours.dialCode}, theirs: ${theirCode})`] };
+    }
+  }
+  const codeMatch = !!(ours.dialCode && theirCode);
+
   if (AFTERMARKET.test(listing.title || '')) {
     return { match: false, confidence: null, reasons: ['aftermarket / modified'] };
   }
 
   const ourDial = dialColors(ours.title);
   const theirDial = dialColors(listing.title, { titleFallback: true }) || dialColors(listing.description);
-  if (dialsDiffer(ourDial, theirDial)) {
+  if (!codeMatch && dialsDiffer(ourDial, theirDial)) {
     return {
       match: false,
       confidence: null,
       reasons: [`dial differs (ours: ${[...ourDial].join('/')}, theirs: ${[...theirDial].join('/')})`]
     };
   }
-  const dialKnown = !!(ourDial && theirDial);
-  if (dialKnown) {
+  const dialKnown = codeMatch || !!(ourDial && theirDial);
+  if (dialKnown && !codeMatch) {
     const a = dialPatterns(ours.title);
     const b = dialPatterns(listing.title, { titleFallback: true });
     if ((a.size || b.size) && (a.size !== b.size || [...a].some(x => !b.has(x)))) {
@@ -231,10 +254,11 @@ export function compare(ours, listing) {
     }
   }
   if (!dialKnown) reasons.push('dial not confirmed');
+  if (codeMatch) reasons.push('exact version code');
 
   const ourMarkers = dialMarkers(ours.title);
   const theirMarkers = dialMarkers(listing.title, { titleFallback: true });
-  if (setsDiffer(ourMarkers, theirMarkers) || (ourMarkers && theirMarkers && ourMarkers.has('diamond') !== theirMarkers.has('diamond'))) {
+  if (!codeMatch && setsDiffer(ourMarkers, theirMarkers) || (ourMarkers && theirMarkers && ourMarkers.has('diamond') !== theirMarkers.has('diamond'))) {
     return {
       match: false,
       confidence: null,
@@ -244,12 +268,12 @@ export function compare(ours, listing) {
 
   // A diamond-set dial costs much more than the plain one; if the listing
   // doesn't say, the match can't be trusted fully.
-  const diamondUnconfirmed = ourMarkers?.has('diamond') && !theirMarkers?.has('diamond');
+  const diamondUnconfirmed = !codeMatch && ourMarkers?.has('diamond') && !theirMarkers?.has('diamond');
   if (diamondUnconfirmed) reasons.push('diamond dial not confirmed');
 
   const ourBracelet = braceletType(ours.title);
   const theirBracelet = braceletType(listing.title);
-  if (setsDiffer(ourBracelet, theirBracelet)) {
+  if (!codeMatch && setsDiffer(ourBracelet, theirBracelet)) {
     return {
       match: false,
       confidence: null,

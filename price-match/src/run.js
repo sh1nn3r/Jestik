@@ -7,7 +7,9 @@ import { suggest } from './pricing.js';
 
 function isOwnListing(listing, ownDomains) {
   const haystack = `${listing.url || ''} ${listing.domain || ''} ${listing.source || ''}`.toLowerCase();
-  return ownDomains.some(d => haystack.includes(d.toLowerCase()));
+  // Google Shopping names the seller ("Chrono Candy") rather than the domain.
+  const squashed = haystack.replace(/[\s.-]/g, '');
+  return ownDomains.some(d => haystack.includes(d.toLowerCase()) || squashed.includes(d.toLowerCase().split('.')[0].replace(/-/g, '')));
 }
 
 export async function runPriceMatch({ catalog, sources, pricing, ownDomains = [], log = () => {} }) {
