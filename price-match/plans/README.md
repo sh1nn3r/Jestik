@@ -15,3 +15,11 @@ chronocandy.com does not, with competitor low/median/high prices. Not yet
 approved. Before any are added: the owner confirms which they can source,
 supplies their own photos and descriptions (never copied from competitors),
 and they are created as drafts for review.
+
+`2026-10-13-safe-cuts-shopify-import.csv`: the same 85 changes in Shopify's
+product import format, priced $50 below the competitor (owner's choice),
+rounded down to whole dollars. Live prices were rechecked against chronocandy.com
+before it was made. Import with "Overwrite products with matching handles".
+Only Handle, Title, option columns (filled with current values), SKU and
+price are included, so nothing else on the listings changes.
+`2026-10-13-safe-cuts-UNDO-shopify-import.csv` restores the old prices.
