@@ -39,3 +39,4 @@ Applied 2026-10-13 via the Shopify connector: all 115 raise-prices changes succe
 `2026-10-13-match548-*`: owner approved matching all 548 watches where WatchGuys or WatchGuyNYC sells the exact same watch cheaper; new price is $50 under the cheaper of the two. Applied via the Shopify connector. UNDO restores prior prices.
 
 `2026-10-13-matchreview-*`: owner said "match them" for the check-by-eye watches (competitor listing did not confirm dial or condition); priced $50 under that competitor. UNDO restores prior prices.
+Applied 2026-10-13 via the Shopify connector: all 475 succeeded ($13.1M total cuts; owner chose to include the 155 watches over $100K).
