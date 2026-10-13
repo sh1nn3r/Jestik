@@ -12,7 +12,8 @@ import { readFile } from 'node:fs/promises';
 import { parseArgs } from 'node:util';
 import { loadCatalogFromFile, loadCatalogFromShopify, loadCatalogFromStorefront } from './catalog.js';
 import { runPriceMatch } from './run.js';
-import { summarize, writeReport } from './report.js';
+import { summarize, writeGapReport, writeReport } from './report.js';
+import { findGaps } from './gaps.js';
 import { createShopifyStoreSource } from './sources/shopify-store.js';
 import { createSerpApiSource } from './sources/serpapi.js';
 import { createDataForSeoSource } from './sources/dataforseo.js';
@@ -92,6 +93,16 @@ async function main() {
   log(`done: ${JSON.stringify(counts)}`);
   console.log(csvPath);
   console.log(jsonPath);
+
+  // Watches competitors list that we don't carry at all.
+  const full = sources.filter(s => s.fullCatalog);
+  if (full.length && !args.sku) {
+    const listings = (await Promise.all(full.map(s => s.search().catch(() => [])))).flat();
+    const { groups, skippedNoRef } = findGaps(catalog, listings);
+    const gapPath = await writeGapReport(groups, args.out);
+    log(`not carried: ${groups.length} references across ${full.length} competitors (${skippedNoRef} listings had no readable reference)`);
+    console.log(gapPath);
+  }
 }
 
 main().catch(err => {

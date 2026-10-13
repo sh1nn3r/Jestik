@@ -55,3 +55,29 @@ export async function writeReport(results, dir) {
   await writeFile(jsonPath, JSON.stringify(results, null, 2));
   return { csvPath, jsonPath };
 }
+
+const GAP_COLUMNS = [
+  ['brand', g => g.brand],
+  ['reference', g => g.reference],
+  ['example_title', g => g.exampleTitle],
+  ['competitors_carrying', g => g.competitors],
+  ['sellers', g => g.sellers],
+  ['listings', g => g.listings],
+  ['unworn', g => g.conditions.unworn || 0],
+  ['pre_owned', g => g.conditions['pre-owned'] || 0],
+  ['condition_unknown', g => g.conditions.unknown || 0],
+  ['low_price', g => g.lowPrice],
+  ['median_price', g => g.medianPrice],
+  ['high_price', g => g.highPrice],
+  ['cheapest_url', g => g.cheapestUrl]
+];
+
+export async function writeGapReport(groups, dir) {
+  await mkdir(dir, { recursive: true });
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const path = join(dir, `not-carried-${stamp}.csv`);
+  const lines = [GAP_COLUMNS.map(([h]) => h).join(',')];
+  for (const g of groups) lines.push(GAP_COLUMNS.map(([, get]) => csvCell(get(g))).join(','));
+  await writeFile(path, lines.join('\n') + '\n');
+  return path;
+}

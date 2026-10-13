@@ -23,6 +23,8 @@ export function toListings(product, { domain, name }) {
     .filter(v => v.available !== false)
     .map(v => ({
       source: name || domain,
+      vendor: product.vendor || null,
+      sku: v.sku || null,
       title: v.title && v.title !== 'Default Title' ? `${product.title} ${v.title}` : product.title,
       description: `${v.sku || ''} ${tags} ${description}`.slice(0, 2000),
       condition,
@@ -55,6 +57,9 @@ export function createShopifyStoreSource(cfg, { fetchImpl = fetch, delayMs = 150
   return {
     id: cfg.id,
     name: cfg.name || cfg.domain,
+    // search() returns the whole catalog, so it can be used to find watches
+    // they list and we don't.
+    fullCatalog: true,
     async search() {
       listingsPromise ??= loadAll();
       return listingsPromise;

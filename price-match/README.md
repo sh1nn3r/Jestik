@@ -60,6 +60,17 @@ column says what to do:
 - `no-match`: no competitor lists this watch.
 - `skipped`: we couldn't read a reference number from the SKU.
 
+## Watches competitors have that we don't
+
+Each run also writes `reports/not-carried-<date>.csv`: every reference number
+the competitor stores list (over $1,000, known brands) that none of our
+listings has, including price-on-request ones. One row per reference, with how
+many competitors carry it, how many listings, unworn vs. pre-owned counts,
+low/median/high price, and a link to the cheapest. Rows carried by the most
+competitors come first, since those are the models with the most demand.
+This only uses competitors whose whole catalog is readable (the Shopify
+stores). Google Shopping can't list a store's whole catalog.
+
 ## Setup
 
 1. **Our catalog:** with no setup, the tool reads chronocandy.com's public
