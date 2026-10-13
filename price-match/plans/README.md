@@ -29,3 +29,5 @@ watches that have a confirmed match (treated as unworn, since these are
 "available to order"). Owner's rule: be second-cheapest. Every one has only
 one competitor seller, so the price is $50 above that seller. Not yet
 approved. The UNDO file sets them back to $0 (price on request).
+
+`2026-10-13-fix-prices-*.csv`: 102 price-on-request watches priced by the second-cheapest rule ($50 above the only competitor seller), plus the Gondolo 7042/100G-001 set to $0 (price on request) instead of $1,100,000. Owner approved: "if not sure, make it price on request".
