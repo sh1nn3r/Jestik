@@ -1,0 +1,678 @@
+[
+  {
+    "rank": 1,
+    "name": "ErgoDirect",
+    "url": "https://www.ergodirect.com",
+    "category": "ergonomic_specialist",
+    "jestik_brands_carried": [
+      "Ergotron (917 URLs)",
+      "Chief (656)",
+      "Workrite (316)",
+      "Innovative/HAT (271)",
+      "Humanscale (150)",
+      "Office Master (84)",
+      "Ergotech (68)",
+      "Kinesis (48)",
+      "Cotytech (48)",
+      "ESI (34)",
+      "Kensington (31)",
+      "3M (25)",
+      "Evoluent (22)",
+      "Capsa (15)",
+      "SpaceCo (4)"
+    ],
+    "pricing_posture": "Same as Jestik on most items (MAP); higher on Kinesis 360 Pro (+$40) and VM4R (+$2.30)",
+    "free_shipping": "Not verified in this pass",
+    "platform": "Custom PHP storefront (product_info.php URLs) behind Cloudflare",
+    "machine_readable": "YES - sitemap.xml with about 6,116 URLs and lastmod dates. Product pages carry schema.org JSON-LD Offer (price, availability). Plain HTTP fetch works.",
+    "strengths": "Closest clone of Jestik's catalog: nearly the same brand list, including the niche ones (Cotytech, Ergotech, Capsa, SpaceCo). Has chair and monitor-arm finder tools.",
+    "spot_prices_usd": {
+      "LX Pro 45-682-026": 199.0,
+      "Humanscale M2 Pro (base listing)": 434.0,
+      "Kinesis KB360-PRO-GBR": 499.0,
+      "Evoluent VM4R": 92.25,
+      "Workrite Banana-Board tray": 220.2,
+      "Workrite Banana-Board system": 431.4
+    },
+    "notes": "Banana-Board prices match Jestik exactly ($220.20 and $431.40), which suggests both work from the same distributor or MAP feed.",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 2,
+    "name": "The Human Solution (UPLIFT Desk)",
+    "url": "https://www.thehumansolution.com",
+    "category": "ergonomic_specialist",
+    "jestik_brands_carried": [
+      "Humanscale (91 URLs)",
+      "Innovative/HAT (44)",
+      "3M (36)",
+      "Workrite (23)",
+      "Kinesis (19)",
+      "ESI (14)",
+      "Evoluent (11)",
+      "Office Master",
+      "ISE",
+      "Ergotron (WorkFit)"
+    ],
+    "pricing_posture": "At or above MSRP: M2.1 $314 vs Jestik $305; Banana-Board from $575 vs Jestik $431.40; PT79 $721 vs $720.20",
+    "free_shipping": "Not verified in this pass (UPLIFT sister brand advertises free shipping)",
+    "platform": "BigCommerce (xmlsitemap.php)",
+    "machine_readable": "PARTIAL - BigCommerce product sitemap (about 989 URLs, no prices). Product pages expose an itemprop price meta tag. Plain fetch works. Search pages are JS-heavy.",
+    "strengths": "Big ergonomic content and SEO presence, own UPLIFT desk line, live chat and phone experts. Strong Humanscale, 3M and Innovative range.",
+    "spot_prices_usd": {
+      "Humanscale M2.1": 314.0,
+      "Workrite Banana-Board (from)": 575.0,
+      "Office Master PT79": 721.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 3,
+    "name": "Ergo Experts",
+    "url": "https://www.ergoexperts.com",
+    "category": "ergonomic_specialist",
+    "jestik_brands_carried": [
+      "Office Master (88 products)",
+      "ESI (22)",
+      "Workrite (18)",
+      "Innovative (8)",
+      "Humanscale (6)",
+      "Neutral Posture",
+      "Via Seating"
+    ],
+    "pricing_posture": "Cheaper on Humanscale (M2 Pro $259 vs Jestik $305). MAP on Office Master (PT79 $720.20, same as Jestik).",
+    "free_shipping": "Not verified",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 354 products) and /search/suggest.json",
+    "strengths": "Office Master and ESI depth, configurable chairs, good Trustpilot reviews, consultative selling.",
+    "spot_prices_usd": {
+      "Humanscale M2 Pro M21BTBC": 259.0,
+      "Office Master PT79": 720.2
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 4,
+    "name": "Parlor City Furniture",
+    "url": "https://parlorcityfurniture.com",
+    "category": "ergonomic_specialist (office furniture)",
+    "jestik_brands_carried": [
+      "OM Seating / Office Master (209 products)",
+      "Humanscale (11)"
+    ],
+    "pricing_posture": "MAP on OM (PT79 $720.20 = Jestik; OM5-AT $291.85 vs Jestik $288.60). Shows strike-through list prices.",
+    "free_shipping": "Not verified",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 6,807 products)",
+    "strengths": "Large contract-furniture catalog (Global, OfficeSource, KFI, Safco). Spec sheets and CAD downloads.",
+    "spot_prices_usd": {
+      "Office Master PT79": 720.2,
+      "Office Master OM5-AT": 291.85
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 5,
+    "name": "Touchboards",
+    "url": "https://www.touchboards.com",
+    "category": "ergonomic_specialist",
+    "jestik_brands_carried": [
+      "Ergotron (full LX line)",
+      "ESI"
+    ],
+    "pricing_posture": "Historically near MAP (LX 45-241-026 $258.61 vs $300 list)",
+    "free_shipping": "Not verified",
+    "platform": "Unknown; the TLS certificate had expired when checked on 2026-10-21",
+    "machine_readable": "NO (currently) - HTTPS certificate expired, so automated fetch fails",
+    "strengths": "Deep Ergotron and ESI catalog with long SEO history.",
+    "spot_prices_usd": {},
+    "notes": "Site may be lapsing. Re-check.",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 6,
+    "name": "Relax The Back",
+    "url": "https://relaxtheback.com",
+    "category": "ergonomic_specialist (wellness retail)",
+    "jestik_brands_carried": [
+      "Humanscale (25 products: Freedom, World, Liberty, M2 arm, eFloat)"
+    ],
+    "pricing_posture": "At MSRP or with promotions (M2 arm $314; Freedom chair $1,551 promo)",
+    "free_shipping": "Free shipping on orders over $500 (per search snippet)",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 258 products)",
+    "strengths": "Retail showrooms and wellness brand. Overlaps mainly on Humanscale seating and arms.",
+    "spot_prices_usd": {
+      "Humanscale M2 arm (M21NTNC*)": 314.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 7,
+    "name": "CA Modern Home",
+    "url": "https://camodernhome.com",
+    "category": "ergonomic_specialist (authorized Humanscale reseller)",
+    "jestik_brands_carried": [
+      "Humanscale"
+    ],
+    "pricing_posture": "MSRP (M2 Pro $434)",
+    "free_shipping": "Banners say free shipping on most items over $99 (dates unclear)",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 249 products)",
+    "strengths": "Design-led Humanscale configurator listings",
+    "spot_prices_usd": {
+      "Humanscale M2 Pro M21BBTBC": 434.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 8,
+    "name": "BTOD.com",
+    "url": "https://www.btod.com",
+    "category": "ergonomic_specialist (office furniture)",
+    "jestik_brands_carried": [
+      "Humanscale"
+    ],
+    "pricing_posture": "MSRP or slightly below (Freedom with headrest $1,685.99)",
+    "free_shipping": "Free shipping in the contiguous US on that item",
+    "platform": "Magento",
+    "machine_readable": "PARTIAL - sitemap.xml returned 0 URLs. Pages are fetchable.",
+    "strengths": "Quick-ship Humanscale seating, strong chair content.",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 9,
+    "name": "OfficeChairsUSA",
+    "url": "https://www.officechairsusa.com",
+    "category": "ergonomic_specialist (seating)",
+    "jestik_brands_carried": [
+      "Humanscale",
+      "Office Master"
+    ],
+    "pricing_posture": "Not spot-checked",
+    "free_shipping": "Not verified",
+    "platform": "BigCommerce",
+    "machine_readable": "PARTIAL - BigCommerce product sitemap. Product pages have a price meta tag.",
+    "strengths": "Seating-focused",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 10,
+    "name": "MyWorkSupply (now mywork.one)",
+    "url": "https://myworksupply.com",
+    "category": "ergonomic_specialist (B2B)",
+    "jestik_brands_carried": [
+      "Workrite",
+      "Humanscale"
+    ],
+    "pricing_posture": "Login-only pricing",
+    "free_shipping": "Ships in 1-2 days (per listing)",
+    "platform": "Unknown (redirects to mywork.one)",
+    "machine_readable": "NO - prices behind a login",
+    "strengths": "B2B/contract procurement",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 11,
+    "name": "iMovR",
+    "url": "https://www.imovr.com",
+    "category": "ergonomic_specialist (sit-stand)",
+    "jestik_brands_carried": [
+      "(Mostly own brand; low brand overlap)"
+    ],
+    "pricing_posture": "n/a",
+    "free_shipping": "Free shipping (site banner)",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 114 products)",
+    "strengths": "Competes on the sit-stand desk, converter and keyboard-tray categories, not on brands",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 12,
+    "name": "Ergonomic Office Solutions",
+    "url": "https://www.ergonomicofficesolutions.com",
+    "category": "ergonomic_specialist",
+    "jestik_brands_carried": [
+      "Ergotron"
+    ],
+    "pricing_posture": "Not spot-checked",
+    "free_shipping": "Not verified",
+    "platform": "Unknown (not Shopify)",
+    "machine_readable": "Unclear - sitemap.xml was empty",
+    "strengths": "",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 13,
+    "name": "EngineerSupply",
+    "url": "https://www.engineersupply.com",
+    "category": "ergonomic_specialist (technical / office)",
+    "jestik_brands_carried": [
+      "ESI (Edge-Max etc.)"
+    ],
+    "pricing_posture": "Below list (Edge-Max $412.99 vs $737 list)",
+    "free_shipping": "Not verified",
+    "platform": "Custom .aspx",
+    "machine_readable": "PARTIAL - sitemap.xml",
+    "strengths": "",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 14,
+    "name": "CDW",
+    "url": "https://www.cdw.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Humanscale",
+      "Kinesis",
+      "Evoluent",
+      "Chief",
+      "Kensington",
+      "3M"
+    ],
+    "pricing_posture": "Higher than Jestik: VM4R $99.99, KB360-PRO $486.99, M2 Pro kit $347.99, WorkFit-TX $824",
+    "free_shipping": "Varies; free shipping on many items for business accounts (not verified)",
+    "platform": "Custom",
+    "machine_readable": "PARTIAL - product pages fetchable with a data-price attribute. robots.txt returns 406. No public feed.",
+    "strengths": "Corporate and government contracts, net terms, account managers",
+    "spot_prices_usd": {
+      "Kinesis KB360-PRO-GBR": 486.99,
+      "Evoluent VM4R": 99.99,
+      "Humanscale M/Flex M2 Pro kit": 347.99
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 15,
+    "name": "SHI",
+    "url": "https://www.shi.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Humanscale",
+      "Ergotron",
+      "Kinesis",
+      "Evoluent"
+    ],
+    "pricing_posture": "Mixed: VM4R $99; M/Flex M2 Pro kit $328 (MSRP $718)",
+    "free_shipping": "n/a (B2B)",
+    "platform": "Custom",
+    "machine_readable": "NO - 403 to bots",
+    "strengths": "Public-sector contracts (shidirect / publicsector)",
+    "spot_prices_usd": {
+      "Evoluent VM4R": 99.0,
+      "M/Flex M2 Pro kit": 328.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 16,
+    "name": "Markertek",
+    "url": "https://www.markertek.com",
+    "category": "it_b2b_reseller (AV/broadcast)",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Chief"
+    ],
+    "pricing_posture": "Near MAP (LX Pro 45-695-292 $283)",
+    "free_shipping": "Free shipping on orders over $49",
+    "platform": "Custom",
+    "machine_readable": "PARTIAL - no robots or sitemap. Pages are fetchable.",
+    "strengths": "AV and broadcast audience, Chief mounts",
+    "spot_prices_usd": {},
+    "notes": "LX 45-241-026 listed as no longer available",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 17,
+    "name": "Newegg / NeweggBusiness",
+    "url": "https://www.newegg.com",
+    "category": "marketplace / it_b2b",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Kinesis",
+      "Workrite"
+    ],
+    "pricing_posture": "Mixed, sometimes cheaper through marketplace sellers (WorkFit-TX $569 via Adorama; KB360-PRO $479)",
+    "free_shipping": "Varies by seller",
+    "platform": "Custom",
+    "machine_readable": "NO - 403 to bots",
+    "strengths": "Marketplace reach. NeweggBusiness for B2B.",
+    "spot_prices_usd": {
+      "Kinesis KB360-PRO": 479.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 18,
+    "name": "CompSource",
+    "url": "https://www.compsource.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Humanscale",
+      "Ergotron",
+      "Chief"
+    ],
+    "pricing_posture": "Below list on some items (Freedom $1,163.53 vs $2,148, out of stock)",
+    "free_shipping": "Not verified",
+    "platform": "Custom",
+    "machine_readable": "NO - Cloudflare 403 on search. Sitemap index (29 parts) is reachable.",
+    "strengths": "Huge long-tail SKU catalog",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 19,
+    "name": "B&H Photo",
+    "url": "https://www.bhphotovideo.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Chief",
+      "Kensington (typical, not verified)"
+    ],
+    "pricing_posture": "Not verified (blocked)",
+    "free_shipping": "Free expedited shipping on many items (general policy)",
+    "platform": "Custom",
+    "machine_readable": "NO - 403 to bots",
+    "strengths": "Brand trust, fast shipping",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "presence assumed, not verified",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 20,
+    "name": "Connection",
+    "url": "https://www.connection.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Humanscale (M2 Pro listed)"
+    ],
+    "pricing_posture": "Quote or contact for pricing",
+    "free_shipping": "n/a",
+    "platform": "Custom",
+    "machine_readable": "NO - 403",
+    "strengths": "Enterprise accounts",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 21,
+    "name": "Insight",
+    "url": "https://www.insight.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Ergotron (typical, not verified)"
+    ],
+    "pricing_posture": "Not verified",
+    "free_shipping": "n/a",
+    "platform": "Custom",
+    "machine_readable": "NO - 403",
+    "strengths": "Enterprise",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "presence not verified",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 22,
+    "name": "Zones",
+    "url": "https://www.zones.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Ergotron (typical, not verified)"
+    ],
+    "pricing_posture": "Not verified",
+    "free_shipping": "n/a",
+    "platform": "Custom",
+    "machine_readable": "NO - 403",
+    "strengths": "Enterprise",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "presence not verified",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 23,
+    "name": "Zoro (Grainger)",
+    "url": "https://www.zoro.com",
+    "category": "it_b2b_reseller (MRO)",
+    "jestik_brands_carried": [
+      "Cotytech"
+    ],
+    "pricing_posture": "Cotytech dual arm $489.99",
+    "free_shipping": "Free shipping and returns (per listing)",
+    "platform": "Custom",
+    "machine_readable": "NO - 403",
+    "strengths": "MRO buyers",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 24,
+    "name": "SoundPro",
+    "url": "https://soundpro.com",
+    "category": "it_b2b_reseller (AV)",
+    "jestik_brands_carried": [
+      "Chief"
+    ],
+    "pricing_posture": "Below MSRP (K1C120B $315.20 vs $394)",
+    "free_shipping": "Not verified",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json",
+    "strengths": "AV integrator audience",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 25,
+    "name": "Transource",
+    "url": "https://www.transource.com",
+    "category": "it_b2b_reseller",
+    "jestik_brands_carried": [
+      "Ergotron"
+    ],
+    "pricing_posture": "Not spot-checked",
+    "free_shipping": "Not verified",
+    "platform": "WordPress",
+    "machine_readable": "PARTIAL - wp-sitemap",
+    "strengths": "",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 26,
+    "name": "Amazon",
+    "url": "https://www.amazon.com",
+    "category": "big_box_marketplace",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Humanscale",
+      "Kinesis",
+      "Evoluent",
+      "Kensington",
+      "3M",
+      "Ergotech",
+      "Cotytech (typical)"
+    ],
+    "pricing_posture": "Usually at MAP or lower through 3P sellers (not verified, blocked)",
+    "free_shipping": "Prime",
+    "platform": "Custom",
+    "machine_readable": "NO - 503 to bots. Would need Keepa, PA-API or Helium 10.",
+    "strengths": "Dominant reach. Buy-box pressure on accessories (mice, keyboards).",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "blocked; presence assumed",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 27,
+    "name": "Staples / Quill / Staples Advantage",
+    "url": "https://www.staples.com",
+    "category": "big_box_marketplace",
+    "jestik_brands_carried": [
+      "Ergotron",
+      "Humanscale",
+      "Workrite",
+      "HAT Design Works (Quill)",
+      "3M",
+      "Kensington"
+    ],
+    "pricing_posture": "MAP on Ergotron (LX Pro 45-682-292 $199). Higher elsewhere (WorkFit-TX $1,147.39; LX 45-241-026 $274.69; Humanscale 6G $324.29).",
+    "free_shipping": "Free returns; free shipping thresholds",
+    "platform": "Custom",
+    "machine_readable": "NO - 403 to bots",
+    "strengths": "Contract and B2B channel (Staples Advantage), Quill for SMB",
+    "spot_prices_usd": {
+      "Ergotron LX Pro 45-682-292": 199.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 28,
+    "name": "Walmart",
+    "url": "https://www.walmart.com",
+    "category": "big_box_marketplace",
+    "jestik_brands_carried": [
+      "Evoluent",
+      "Ergotron (carts, WorkFit-C)"
+    ],
+    "pricing_posture": "Mixed through 3P sellers (VM4R $89.95-$110.66)",
+    "free_shipping": "Varies",
+    "platform": "Custom",
+    "machine_readable": "NO - bot challenge",
+    "strengths": "Marketplace reach",
+    "spot_prices_usd": {
+      "Evoluent VM4R": 89.95
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 29,
+    "name": "Office Depot / OfficeMax",
+    "url": "https://www.officedepot.com",
+    "category": "big_box_marketplace",
+    "jestik_brands_carried": [
+      "Ergotron, 3M, Kensington (typical, not verified)"
+    ],
+    "pricing_posture": "Not verified",
+    "free_shipping": "Free over a threshold",
+    "platform": "Custom (JS-rendered)",
+    "machine_readable": "NO - JS-rendered search",
+    "strengths": "Store footprint",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "presence not verified",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 30,
+    "name": "Best Buy",
+    "url": "https://www.bestbuy.com",
+    "category": "big_box_marketplace",
+    "jestik_brands_carried": [
+      "Kinesis (Advantage360)"
+    ],
+    "pricing_posture": "Not verified",
+    "free_shipping": "Varies",
+    "platform": "Custom",
+    "machine_readable": "NO",
+    "strengths": "Consumer reach for keyboards and mice",
+    "spot_prices_usd": {},
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 31,
+    "name": "Kinesis (brand-direct)",
+    "url": "https://kinesis-ergo.com",
+    "category": "brand_direct",
+    "jestik_brands_carried": [
+      "Kinesis"
+    ],
+    "pricing_posture": "MSRP: Advantage360 Pro $499 (Jestik $459)",
+    "free_shipping": "Not verified",
+    "platform": "WooCommerce",
+    "machine_readable": "YES - open WooCommerce Store API (/wp-json/wc/store/v1/products?search=)",
+    "strengths": "Manufacturer store, refurbs at $399",
+    "spot_prices_usd": {
+      "Kinesis Advantage360 Pro": 499.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  },
+  {
+    "rank": 32,
+    "name": "Workrite (brand-direct shop)",
+    "url": "https://shop.workriteergo.com",
+    "category": "brand_direct",
+    "jestik_brands_carried": [
+      "Workrite"
+    ],
+    "pricing_posture": "MSRP: Banana-Board system $559 (Jestik $431.40)",
+    "free_shipping": "Not verified",
+    "platform": "Shopify",
+    "machine_readable": "YES - open /products.json (about 150 products)",
+    "strengths": "Manufacturer store",
+    "spot_prices_usd": {
+      "Workrite Banana-Board system": 559.0
+    },
+    "notes": "",
+    "evidence": "direct",
+    "date_checked": "2026-10-21"
+  }
+]
